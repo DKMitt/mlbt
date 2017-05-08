@@ -1,0 +1,26 @@
+{
+  "name": "mlbtracker",
+  "version": "1.0.0",
+  "description": "Mini Library Book Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKMitt/mlbtracker.git"
+  },
+  "author": "NCBC Project 2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DKMitt/mlbtracker/issues"
+  },
+  "homepage": "https://github.com/DKMitt/mlbtracker#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0"
+  }
+}
