@@ -6,7 +6,7 @@
 
 
 
-following structure:
+### The website is setup to the following structure:
 
 ```
 .
