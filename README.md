@@ -48,11 +48,11 @@
 ### Technologies Used 
 <ul>
   <li>MySQL</li>
-  <li>Node</li>s
+  <li>Node.js</li>
   <li>Express</li>
   <li>Handlebars</li>
   <li>ORM</li>
-  <li>Node.js</li>
+  
 </ul>
 
 - - - 
