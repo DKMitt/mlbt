@@ -56,3 +56,6 @@
 </ul>
 
 - - - 
+
+### How to use the application
+
