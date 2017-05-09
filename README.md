@@ -46,7 +46,6 @@
 
 
 ### Technologies Used 
-```
 <ul>
   <li>MySQL</li>
   <li>Node</li>s
@@ -55,5 +54,5 @@
   <li>ORM</li>
   <li>Node.js</li>
 </ul>
-```
+
 - - - 
