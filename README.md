@@ -1,12 +1,10 @@
 # Mini Library Book Tracker :blue_book:
 
 
+### Description: A library application that tracks the books at the Northwestern University department of Material Science and Engineering. Facilitates access for students and faculty.
 
 
-
-
-
-### The website is setup to the following structure:
+### File Structure:
 
 ```
 .
@@ -45,3 +43,17 @@
 ```
 
 - - -
+
+
+### Technologies Used 
+```
+<ul>
+  <li>MySQL</li>
+  <li>Node</li>s
+  <li>Express</li>
+  <li>Handlebars</li>
+  <li>ORM</li>
+  <li>Node.js</li>
+</ul>
+```
+- - - 
