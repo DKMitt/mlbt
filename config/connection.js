@@ -18,7 +18,4 @@ connection.connect(function(err) {
 	console.log(" ");
 	console.log("connected as id: " + connection.threadId);
 	console.log(" ");
-	console.log("Listening on port: " + 3000);
-	console.log(" ");
-	console.log("----------------------------- ");
 });
