@@ -7,7 +7,7 @@ CREATE TABLE books (
     title VARCHAR (255) NOT NULL,
     author VARCHAR (255) NOT NULL,
 	edition VARCHAR (11),
-    ISBN INTEGER (50),
+    ISBN VARCHAR (50),
     publisher VARCHAR (255) NOT NULL,
     PRIMARY KEY (id)
     );
