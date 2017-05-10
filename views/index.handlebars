@@ -1,0 +1,25 @@
+<h1>MLBT</h1>
+
+<h2>MLBT</h2>
+
+<ul>
+  {{#each book}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="baconBurger" value="true">
+          <button type="submit">Devour!</button>
+        </form>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<h2>Add a Book</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <button type="submit">Add Book</button>
+</form>
