@@ -1,0 +1,2 @@
+INSERT INTO users (name, email, netID, admin) 
+VALUES ('George Jones', 'test@northwestern.edu', 'test123', false);
