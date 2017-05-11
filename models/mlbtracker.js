@@ -52,3 +52,4 @@ var user = {
 //Exporting the database function for the controller
 module.exports = book;
 module.exports = user;
+console.log(book);

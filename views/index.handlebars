@@ -3,7 +3,7 @@
 <h2>Books that are checked out</h2>
 
 <ul>
-  {{#each books}}
+  {{#each book}}
     {{#unless this.status}}
       <li>
         {{this.name}}
@@ -13,7 +13,7 @@
           <button type="submit">Return</button>
         </form>
 
-        {{> books/delete-books}}
+        {{> book/delete-book}}
       </li>
     {{/unless}}
   {{/each}}
@@ -22,7 +22,7 @@
 <h2>Books that are available</h2>
 
 <ul>
-  {{#each books}}
+  {{#each book}}
     {{#if this.status}}
       <li>
         {{this.name}}
@@ -32,7 +32,7 @@
           <button type="submit">Return Book</button>
         </form>
 
-        {{> books/delete-book}}
+        {{> book/delete-book}}
       </li>
     {{/if}}
   {{/each}}
