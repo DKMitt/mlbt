@@ -25,3 +25,12 @@ CREATE TABLE users (
     to_date DATE,
     PRIMARY KEY (id)
     );
+
+CREATE TABLE checkout (
+    id INTEGER (11) AUTO_INCREMENT NOT NULL,
+    netID VARCHAR (50) NOT NULL,
+    status BOOLEAN DEFAULT true,
+    from_date DATE,
+    to_date DATE,
+    PRIMARY KEY (id)
+    );
