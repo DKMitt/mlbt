@@ -2,7 +2,7 @@
 var connection = require("../config/connection.js");
 
 
-ORM Object for SQL Statement functions
+//ORM Object for SQL Statement functions
 var orm = {
     //Selecting all for SQL Statement
     selectAll: function(tableInput, callback) {
