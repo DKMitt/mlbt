@@ -10,6 +10,8 @@ CREATE TABLE books (
     ISBN VARCHAR (50),
     publisher VARCHAR (255) NOT NULL,
     status BOOLEAN DEFAULT true,
+    from_date DATE,
+    to_date DATE,
     PRIMARY KEY (id)
     );
     
@@ -19,5 +21,7 @@ CREATE TABLE users (
     email VARCHAR (255) NOT NULL,
     netID VARCHAR (50) NOT NULL,
     admin BOOLEAN DEFAULT false,
+    from_date DATE,
+    to_date DATE,
     PRIMARY KEY (id)
     );
