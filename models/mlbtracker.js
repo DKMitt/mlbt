@@ -5,8 +5,10 @@ var book = {
     all: function(cb) {
     orm.all("books", function(res) {
       cb(res);
-    });
-};
+    	});
+	}
+}
+
 
 //Exporting the database function for the controller
 module.exports = book;
