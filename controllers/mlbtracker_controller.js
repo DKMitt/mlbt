@@ -8,7 +8,7 @@ var mlbt = require("../models/mlbtracker.js");
 
 //Creating routes 
 router.get("/", function(req, res) {
-  book.all(function(data) {
+  mlbt.all(function(data) {
     var hbsObject = {
       books: data
     };
@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  book.create([
+  mlbt.create([
     "name", "book"
   ], [
     req.body.name, req.body.book

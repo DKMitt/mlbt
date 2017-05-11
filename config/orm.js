@@ -39,5 +39,7 @@ var orm = {
 
 //Exporting ORM object for model
 module.exports = orm;
+console.log(orm);
+
 
 
