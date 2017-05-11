@@ -24,3 +24,6 @@ VALUES ('Jeannine Hall', 'jeannine-hall@northwestern.edu', 'jlh974', true);
 
 INSERT INTO users (name, email, netID, admin) 
 VALUES ('Gail Madete', 'g-madete@northwestern.edu', 'gam249', true);
+
+INSERT INTO users (name, email, netID, admin) 
+VALUES ('George Jones', 'test@northwestern.edu', 'test123', false);
