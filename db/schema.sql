@@ -25,6 +25,7 @@ CREATE TABLE users (
     to_date DATE,
     PRIMARY KEY (id)
     );
+<<<<<<< HEAD
 
 CREATE TABLE checkout (
     id INTEGER (11) AUTO_INCREMENT NOT NULL,
@@ -34,3 +35,5 @@ CREATE TABLE checkout (
     to_date DATE,
     PRIMARY KEY (id)
     );
+=======
+>>>>>>> jeannine
