@@ -40,8 +40,10 @@ var user = {
 };
 
 //Exporting the database function for the controller
-module.exports = admin;
-// module.exports = {
-//   admin: admin,
-//   user: user
-// }
+module.exports = {
+  admin: admin,
+  user: user
+}
+
+// exports.admin = admin;
+// exports.user = user;
