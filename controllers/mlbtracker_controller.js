@@ -22,6 +22,14 @@ router.get("/", function(req, res) {
   }); 
 });
 
+router.post("/", function(req, res) {
+   console.log(req.body);
+  //  admin.createNewBook([req.body.books], function() {
+  //     res.redirect("/");
+  // }); 
+  res.end()
+});
+
 
 //=================
 //====ADMIN======== 
@@ -33,7 +41,7 @@ router.get("/admin", function(req, res) {
       books: data
     };
     console.log(booksObject);
-    res.render("index", booksObject);
+    res.render("admin", booksObject);
   }); 
 });
 
