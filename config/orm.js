@@ -6,7 +6,7 @@ var connection = require("../config/connection.js");
 var orm = {
     //Selecting all for SQL Statement
     all: function(tableInput, callback) {
-        var queryString = "SELECT * FROM ??";
+        var queryString = "SELECT * FROM books";
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) {
                 throw err;
@@ -15,26 +15,26 @@ var orm = {
             console.log("Select All Completed");
         });
     },
-    //Inserting a new item for SQL Statement
-    create: function(tableInput, colName, vals, callback) {
-        var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
-        connection.query(queryString, [tableInput, colName, vals], function(err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    },
-    //Updating row for SQL Statement
-    update: function(tableInput, colName, newInput, colId, pageId, callback) {
-        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-        connection.query(queryString, [tableInput, colName, newInput, colId, pageId], function(err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    }  
+    // //Inserting a new item for SQL Statement
+    // create: function(tableInput, colName, vals, callback) {
+    //     var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
+    //     connection.query(queryString, [tableInput, colName, vals], function(err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //         callback(result);
+    //     });
+    // },
+    // //Updating row for SQL Statement
+    // update: function(tableInput, colName, newInput, colId, pageId, callback) {
+    //     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+    //     connection.query(queryString, [tableInput, colName, newInput, colId, pageId], function(err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //         callback(result);
+    //     });
+    // }  
 };
 
 //Exporting ORM object for model
