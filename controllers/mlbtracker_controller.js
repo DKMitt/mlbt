@@ -13,7 +13,8 @@ var admin = mlbt.admin;
 //====USER=========
 //=================
 router.get("/", function(req, res) {
-   user.all(function(data) {
+   user.limited(function(data) {
+    console.log(data);
     var booksObject = {
       books: data
     };
