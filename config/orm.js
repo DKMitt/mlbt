@@ -12,9 +12,18 @@ var orm = {
                 throw err;
             }
             callback(result);
-            console.log("Select All Completed");
         });
     },
+    limited: function(tableInput, colName, vals, callback) {
+        var queryString = "SELECT * FROM ??";
+        connection.query(queryString, [tableInput, colName, vals], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
+
     //Inserting a new item for SQL Statement
     create: function(tableInput, colName, vals, callback) {
         var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
