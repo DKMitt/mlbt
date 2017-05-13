@@ -13,7 +13,7 @@ var admin = mlbt.admin;
 //====USER=========
 //=================
 router.get("/", function(req, res) {
-   user.limited(function(data) {
+   user.all(function(data) {
     console.log(data);
     var booksObject = {
       books: data
@@ -23,13 +23,13 @@ router.get("/", function(req, res) {
   }); 
 });
 
-router.post("/", function(req, res) {
-   console.log(req.body);
-  //  admin.createNewBook([req.body.books], function() {
-  //     res.redirect("/");
-  // }); 
-  res.end()
-});
+// router.post("/", function(req, res) {
+//    console.log(req.body);
+//   //  admin.createNewBook([req.body.books], function() {
+//   //     res.redirect("/");
+//   // }); 
+//   res.end()
+// });
 
 
 //=================
