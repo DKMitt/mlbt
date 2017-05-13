@@ -25,9 +25,6 @@ var orm = {
             callback(result);
         });
     },
-    //Updating the book status --- available / checkout 
-    //should have two button click for available and unavailable 
-    //
     // update: function(tableInput, colName, update, colID, callback) {
     //     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
     //     connection.query(queryString, [tableInput, colName, update, colID], function(err, result) {
