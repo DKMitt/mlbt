@@ -26,6 +26,7 @@ CREATE TABLE users (
     PRIMARY KEY (id)
     );
 
+
 CREATE TABLE checkout (
     id INTEGER (11) AUTO_INCREMENT NOT NULL,
     user_id INTEGER (11) NOT NULL,
@@ -37,3 +38,5 @@ CREATE TABLE checkout (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (book_id) REFERENCES books(id)
     );
+
+
