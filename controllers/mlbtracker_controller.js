@@ -9,44 +9,43 @@ var mlbt = require("../models/mlbtracker.js");
 //Creating routes 
 router.get("/", function(req, res) {
   mlbt.all(function(data) {
-    var hbsObject = {
+    var booksObject = {
       books: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(booksObject);
+    res.render("index", booksObject);
   }); 
 });
 
-router.post("/", function(req, res) {
-  mlbt.create([
-    "name", "book"
-  ], [
-    req.body.name, req.body.book
-  ], function() {
-    res.redirect("/");
-  });
-});
+// router.post("/", function(req, res) {
+//   console.log(req.body.books);
+//   mlbt.create([
+//     req.body.books
+//   ], function() {
+//     res.redirect("/");
+//   });
+// });
 
-router.put("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+// router.put("/:id", function(req, res) {
+//   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+//   console.log("condition", condition);
 
-  book.update({
-    book: req.body.book
-  }, condition, function() {
-    res.redirect("/");
-  });
-});
+//   mlbt.update({
+//     books: req.body.books
+//   }, condition, function() {
+//     res.redirect("/");
+//   });
+// });
 
 
-router.delete("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+// router.delete("/:id", function(req, res) {
+//   var condition = "id = " + req.params.id;
 
-  book.delete(condition, function() {
-    res.redirect("/");
-  });
-});
+//   mlbt.delete(condition, function() {
+//     res.redirect("/");
+//   });
+// });
 
 
 //Export routes for server.js
