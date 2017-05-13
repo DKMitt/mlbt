@@ -34,11 +34,11 @@ var admin = {
 
 
 var user = {
-  limited: function(cb) {
-    orm.limited("books", ["title", "author", "status"], function(res) {
-      cb(res);
-    });
-  },
+  // limited: function(cb) {
+  //   orm.limited("books", ["title", "author", "status"], function(res) {
+  //     cb(res);
+  //   });
+  // },
 
   //user need to send a request to admin for the books ---notification ///email
 };
