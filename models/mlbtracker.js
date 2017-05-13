@@ -1,29 +1,33 @@
 //Importing the ORM to create functions to interact with the database
 var orm = require("../config/orm.js");
 
+
+/* admin have the authority : CRUD command*/
 var admin = {
+  //pulling up all the books
   all: function(cb) {
     orm.all("books", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
-  createNewBook: function(cols, vals, cb) {
-    orm.create("books", cols, vals, function(res) {
+  createNewBook: function(vals, cb) {
+    orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], vals, function(res) {
       cb(res);
     });
   },
-  update: function(objColVals, condition, cb) {
-    orm.update("books", objColVals, condition, function(res) {
+  updateBookStatus: function(update, colID, cb) {
+    orm.update("books", "status", update, "id" function(res) {
       cb(res);
     });
   },
-  delete: function(condition, cb) {
-    orm.delete("books", condition, function(res) {
-      cb(res);
-    });
-  }
+  // delete: function(condition, cb) {
+  //   orm.delete("books", condition, function(res) {
+  //     cb(res);
+  //   });
+  // }
 };
+
 
 var user = {
   all: function(cb) {
@@ -32,7 +36,7 @@ var user = {
     });
   },
 
-  //user need to send a request to admin for the books ---notification
+  //user need to send a request to admin for the books ---notification ///email
 };
 
 //Exporting the database function for the controller
