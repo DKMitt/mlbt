@@ -16,16 +16,16 @@ var admin = {
       cb(res);
     });
   },
-  updateBookStatus: function(update, colID, cb) {
-    orm.update("books", "status", update, "id" function(res) {
-      cb(res);
-    });
-  },
-  // delete: function(condition, cb) {
-  //   orm.delete("books", condition, function(res) {
+  // updateBookStatus: function(update, colID, cb) {
+  //   orm.update("books", "status", update, "id" function(res) {
   //     cb(res);
   //   });
-  // }
+  // },
+  // // delete: function(condition, cb) {
+  // //   orm.delete("books", condition, function(res) {
+  // //     cb(res);
+  // //   });
+  // // }
 };
 
 
@@ -40,7 +40,8 @@ var user = {
 };
 
 //Exporting the database function for the controller
-module.exports = {
-  admin: admin,
-  user: user
-}
+module.exports = admin;
+// module.exports = {
+//   admin: admin,
+//   user: user
+// }

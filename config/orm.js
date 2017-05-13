@@ -28,15 +28,15 @@ var orm = {
     //Updating the book status --- available / checkout 
     //should have two button click for available and unavailable 
     //
-    update: function(tableInput, colName, update, colID, callback) {
-        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-        connection.query(queryString, [tableInput, colName, update, colID], function(err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    }  
+    // update: function(tableInput, colName, update, colID, callback) {
+    //     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+    //     connection.query(queryString, [tableInput, colName, update, colID], function(err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //         callback(result);
+    //     });
+    // }  
 };
 
 //Exporting ORM object for model
