@@ -5,13 +5,13 @@ var orm = require("../config/orm.js");
 /* admin have the authority : CRUD command*/
 var admin = {
   //pulling up all the books
-  all: function(cb) {
+  all: function(callback) {
     orm.all("books", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
-  createNewBook: function(vals, cb) {
+  createNewBook: function(vals, callback) {
     orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], vals, function(res) {
       cb(res);
     });
@@ -34,11 +34,11 @@ var admin = {
 
 
 var user = {
-  limited: function(cb) {
-    orm.limited("books", ["title", "author", "status"], function(res) {
-      cb(res);
-    });
-  },
+  // limited: function(callback) {
+  //   orm.limited("books", ["title", "author", "status"], function(res) {
+  //     cb(res);
+  //   });
+  // },
 
   //user need to send a request to admin for the books ---notification ///email
 };
