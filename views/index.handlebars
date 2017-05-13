@@ -1,58 +1,69 @@
-<h1>MLBT</h1>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
 
-<h2>Books that are checked out</h2>
 
-<ul>
-  {{#each book}}
-    {{#unless this.status}}
-      <li>
-        {{this.name}}
+  <!-- Table -->
+  <table class="table">
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="borrowed" value="true">
-          <button type="submit">Return</button>
-        </form>
+  <h1>MLBT</h1>
 
-        {{> book/delete-book}}
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+  <h2>Books that are checked out</h2>
 
-<h2>Books that are available</h2>
+  <ul>
+    {{#each book}}
+      {{#unless this.status}}
+        <li>
+          {{this.name}}
 
-<ul>
-  {{#each book}}
-    {{#if this.status}}
-      <li>
-        {{this.name}}
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="borrowed" value="true">
+            <button type="submit">Return</button>
+          </form>
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="return" value="false">
-          <button type="submit">Return Book</button>
-        </form>
+          {{> book/delete-book}}
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
 
-        {{> book/delete-book}}
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
+  <h2>Books that are available</h2>
 
-<h2>Add a Book</h2>
-<form class="create-update-form" action="/" method="POST">
+  <ul>
+    {{#each book}}
+      {{#if this.status}}
+        <li>
+          {{this.name}}
 
-  <div class="form-group">
-    <label for="search-label">Book Search:</label>
-    <input type="text" id="search-title" name="title">
-    <input type="text" id="search-author" name="author">
-    <input type="text" id="search-isbn" name="ISBN">
-  </div>
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="return" value="false">
+            <button type="submit">Return Book</button>
+          </form>
 
-  <div class="form-group">
-    <label for="book">Add a book</label><br>
-    <input type="radio" name="book1" value="1" checked> Book1<br>
-    <input type="delete" name="book2" value="0"> Book2
-  </div>
+          {{> book/delete-book}}
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
 
-  <button type="submit">Add Book</button>
-</form>
+  <h2>Add a Book</h2>
+  <form class="create-update-form" action="/" method="POST">
+
+    <div class="form-group">
+      <label for="search-label">Book Search:</label>
+      <input type="text" id="search-title" name="title">
+      <input type="text" id="search-author" name="author">
+      <input type="text" id="search-isbn" name="ISBN">
+    </div>
+
+    <div class="form-group">
+      <label for="book">Add a book</label><br>
+      <input type="radio" name="book1" value="1" checked> Book1<br>
+      <input type="delete" name="book2" value="0"> Book2
+    </div>
+
+    <button type="submit">Add Book</button>
+  </form>
+  
+  </table>
+</div>
