@@ -15,26 +15,28 @@ var orm = {
             console.log("Select All Completed");
         });
     },
-    // //Inserting a new item for SQL Statement
-    // create: function(tableInput, colName, vals, callback) {
-    //     var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
-    //     connection.query(queryString, [tableInput, [col1, col2],  ], function(err, result) {
-    //         if (err) {
-    //             throw err;
-    //         }
-    //         callback(result);
-    //     });
-    // },
-    // //Updating row for SQL Statement
-    // update: function(tableInput, colName, newInput, colId, pageId, callback) {
-    //     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-    //     connection.query(queryString, [tableInput, colName, newInput, colId, pageId], function(err, result) {
-    //         if (err) {
-    //             throw err;
-    //         }
-    //         callback(result);
-    //     });
-    // }  
+    //Inserting a new item for SQL Statement
+    create: function(tableInput, colName, vals, callback) {
+        var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
+        connection.query(queryString, [tableInput, colName, vals], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
+    //Updating the book status --- available / checkout 
+    //should have two button click for available and unavailable 
+    //
+    update: function(tableInput, colName, update, colID, callback) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+        connection.query(queryString, [tableInput, colName, update, colID], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    }  
 };
 
 //Exporting ORM object for model
