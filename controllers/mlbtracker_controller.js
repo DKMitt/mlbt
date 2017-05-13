@@ -5,10 +5,15 @@ var router = express.Router();
 
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
+var user = mlbt.user;
+var admin = mlbt.admin;
+//Creating routes for index 
 
-//Creating routes 
+//=================
+//====USER=========
+//=================
 router.get("/", function(req, res) {
-  mlbt.all(function(data) {
+   user.all(function(data) {
     var booksObject = {
       books: data
     };
@@ -17,14 +22,29 @@ router.get("/", function(req, res) {
   }); 
 });
 
-// router.post("/", function(req, res) {
-//   console.log(req.body.books);
-//   mlbt.create([
-//     req.body.books
-//   ], function() {
-//     res.redirect("/");
-//   });
-// });
+
+//=================
+//====ADMIN======== 
+//=================
+
+router.get("/admin", function(req, res) {
+   admin.all(function(data) {
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("index", booksObject);
+  }); 
+});
+
+router.post("/admin", function(req, res) {
+  console.log(req.body.books);
+  mlbt.create([
+    req.body.books
+  ], function() {
+    res.redirect("/admin");
+  });
+});
 
 // router.put("/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
