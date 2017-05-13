@@ -1,56 +1,57 @@
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Book Checkout</div>
-
-  <!-- Table -->
-  <table class="table">
-
-  <h1>Northwestern Logo Here</h1>
-
-  <div class = "test">
-    <div class="panel panel-default">
+<div class = "table">  
+  <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Book Checkout</div>
-      <ul>
-        {{#each book}}
-          {{#unless this.status}}
-            <li>
-              {{this.name}}
+    <div class="panel-heading">Index</div>
 
-              <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="borrowed" value="true">
-                <button type="submit">Return</button>
-              </form>
+    <!-- Table -->
+    <table class="table">
 
-              {{> book/delete-book}}
-            </li>
-          {{/unless}}
-        {{/each}}
-      </ul>
+    <h1>Northwestern Logo Here</h1>
 
-      <h2>Books that are available</h2>
+    <div class = "test">
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Book Checkout</div>
+        <ul>
+          {{#each book}}
+            {{#unless this.status}}
+              <li>
+                {{this.name}}
 
-      <ul>
-        {{#each book}}
-          {{#if this.status}}
-            <li>
-              {{this.name}}
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="borrowed" value="true">
+                  <button type="submit">Return</button>
+                </form>
 
-              <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="return" value="false">
-                <button type="submit">Return Book</button>
-              </form>
+                {{> book/delete-book}}
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
 
-              {{> book/delete-book}}
-            </li>
-          {{/if}}
-        {{/each}}
-      </ul>
+        <h2>Books that are available</h2>
 
-      <form class="create-update-form" action="/" method="POST">
-      <button type="submit">Add Book</button>
-      </form>
-    </table>
+        <ul>
+          {{#each book}}
+            {{#if this.status}}
+              <li>
+                {{this.name}}
+
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="return" value="false">
+                  <button type="submit">Return Book</button>
+                </form>
+
+                {{> book/delete-book}}
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+
+        <form class="create-update-form" action="/" method="POST">
+        </form>
+      </table>
+    </div>
+  </table>
   </div>
-</table>
 </div>
