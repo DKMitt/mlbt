@@ -34,7 +34,7 @@ var admin = {
 
 
 var user = {
-  // limited: function(callback) {
+  // limited: function(cb) {
   //   orm.limited("books", ["title", "author", "status"], function(res) {
   //     cb(res);
   //   });
