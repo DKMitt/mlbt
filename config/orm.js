@@ -6,7 +6,7 @@ var connection = require("../config/connection.js");
 var orm = {
     //Selecting all for SQL Statement
     all: function(tableInput, callback) {
-        var queryString = "SELECT * FROM books";
+        var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) {
                 throw err;
@@ -18,7 +18,7 @@ var orm = {
     // //Inserting a new item for SQL Statement
     // create: function(tableInput, colName, vals, callback) {
     //     var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
-    //     connection.query(queryString, [tableInput, colName, vals], function(err, result) {
+    //     connection.query(queryString, [tableInput, [col1, col2],  ], function(err, result) {
     //         if (err) {
     //             throw err;
     //         }
