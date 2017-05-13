@@ -8,7 +8,10 @@ var PORT = process.env.PORT || 3000;
 
 //Serve static content from public directory
 app.use(express.static(process.cwd() + "/public"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //override with POST having ?_method=DELETE / =PUT
 app.use(methodOverride("_method"));
