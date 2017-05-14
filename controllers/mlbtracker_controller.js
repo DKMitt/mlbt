@@ -42,7 +42,7 @@ router.get("/admin", function(req, res) {
       books: data
     };
     console.log(booksObject);
-    res.render("admin", booksObject);
+    res.render("checkout", booksObject);
   }); 
 });
 
@@ -51,7 +51,7 @@ router.post("/admin", function(req, res) {
   mlbt.create([
     req.body.books
   ], function() {
-    res.redirect("/admin");
+    res.redirect("/checkout");
   });
 });
 

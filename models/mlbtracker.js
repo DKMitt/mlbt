@@ -7,13 +7,13 @@ var admin = {
   //pulling up all the books
   all: function(callback) {
     orm.all("books", function(res) {
-      cb(res);
+      callback(res);
     });
   },
   // The variables cols and vals are arrays.
   createNewBook: function(vals, callback) {
     orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], vals, function(res) {
-      cb(res);
+      callback(res);
     });
   },
   //Updating the book status --- available / checkout 
