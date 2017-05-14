@@ -5,15 +5,15 @@ var orm = require("../config/orm.js");
 /* admin have the authority : CRUD command*/
 var admin = {
   //pulling up all the books
-  all: function(cb) {
+  all: function(callback) {
     orm.all("books", function(res) {
-      cb(res);
+      callback(res);
     });
   },
   // The variables cols and vals are arrays.
-  createNewBook: function(vals, cb) {
+  createNewBook: function(vals, callback) {
     orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], vals, function(res) {
-      cb(res);
+      callback(res);
     });
   },
   //Updating the book status --- available / checkout 

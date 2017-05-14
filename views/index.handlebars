@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   
   <div class="row">
@@ -56,6 +57,48 @@
               </tr>
             </tbody>
         </table>
-      </div>
-    </div>
-  </div>
+        <ul>
+              {{#each book}}
+                {{#unless this.status}}
+                  <li>
+                    {{this.name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="borrowed" value="true">
+                      <button type="submit">Return</button>
+                    </form>
+
+                    {{> book/delete-book}}
+                  </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+
+            <h2>Books that are available</h2>
+
+            <ul>
+              {{#each book}}
+                {{#if this.status}}
+                  <li>
+                    {{this.name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="return" value="false">
+                      <button type="submit">Return Book</button>
+                    </form>
+
+                    {{> book/delete-book}}
+                  </li>
+                {{/if}}
+              {{/each}}
+            </ul>
+
+            <form class="create-update-form" action="/" method="POST">
+            </form>
+          </div>
+          </table>
+          </div>
+        </div>
+      </table>
+    </div>   
+</div>
