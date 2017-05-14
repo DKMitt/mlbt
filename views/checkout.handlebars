@@ -1,5 +1,6 @@
 <div class="container">
 	
+	
 	<div class="row">
 	    <div class="center col-sm-12">
 			<img src="./images/logo.jpg" alt="Mini Library Book App">
@@ -7,6 +8,8 @@
 	        <p></p>
 	    </div>
   	</div>
+
+
 	<div class="row">
 	    <div class="col-sm-2">
 	    </div>
@@ -17,52 +20,63 @@
 
 			<div class="container">
             
-			  <table class="table table-hover">
-			    <thead>
-				      <tr>
-				        <th>Title</th>
-				        <th>Author</th>
-				        <th>Available</th>
-				        <th>Request</th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				      <tr tabindex="1">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="2">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="3">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="4">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				    </tbody>
-				  </table>
-				</div>
-
-	    </div>
 
 
-            <ul>
-              {{#each book}}
-                {{#unless this.status}}
-                  <li>
-                    {{this.name}}
+				  <table class="table table-hover">
+				    <thead>
+					     <tr>
+					        <th>Title</th>
+					        <th>Author</th>
+					        <th>edition</th>
+					        <th>ISBN</th>
+					        <th>Publisher</th>
+					        <th>Available</th>
+{{!-- 					        <th>Request</th> --}}
+					     </tr>
+					</thead>
+					    
+					<tbody>
+					            {{#each books}}
+					 {{#if this.status}}
+
+			 	
+			 		<tr tabindex="1">
+				        <td>{{this.title}}</td>
+				        <td>{{this.author}}</td>
+				        <td>{{this.edition}}</td>
+				        <td>{{this.ISBN}}</td>
+				        <td>{{this.publisher}}</td>
+				        <td>{{this.status}}</td>
+				       
+				      </tr>
+
+		  {{/if}}
+		{{/each}}
+				</tbody>
+			 </table>
+		</div>
+
+	  </div>
+
+	</div>
+</div> 
 
 
-</div>
+
+	{{!-- 
+
+	   {{#unless this.status}} 
+
+	      <li>
+	        {{this.title}}
+
+	        <form action="/{{this.id}}?_method=PUT" method="POST">
+	          <input type="hidden" name="status" value="true">
+	          <button type="submit"> TIME!</button>
+	        </form>
+	      </li>
+	    {{/unless}}
+	  {{/each}}
+	</ul>
+
+
