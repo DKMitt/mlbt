@@ -16,11 +16,15 @@ var admin = {
       cb(res);
     });
   },
+  //Updating the book status --- available / checkout 
+  //should have two button click for available and unavailable 
+  // NEED TO HAVE DATE
   // updateBookStatus: function(update, colID, cb) {
   //   orm.update("books", "status", update, "id" function(res) {
   //     cb(res);
   //   });
-  // },
+  // },//
+  
   // // delete: function(condition, cb) {
   // //   orm.delete("books", condition, function(res) {
   // //     cb(res);
@@ -30,11 +34,11 @@ var admin = {
 
 
 var user = {
-  all: function(cb) {
-    orm.all("books", function(res) {
-      cb(res);
-    });
-  },
+  // limited: function(cb) {
+  //   orm.limited("books", ["title", "author", "status"], function(res) {
+  //     cb(res);
+  //   });
+  // },
 
   //user need to send a request to admin for the books ---notification ///email
 };
