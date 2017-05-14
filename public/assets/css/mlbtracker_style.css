@@ -1,6 +1,4 @@
-@media screen and (min-width: 400px) {
-
-
+@media screen and (min-width:400px) {
 
 .booksTable {
   float:left;
@@ -11,7 +9,6 @@
   height: 600px;
   width: 700px;
   position:relative;
-
 }
 
 .footer{
@@ -26,9 +23,7 @@
     height:50px;
     text-align:center;
     background-color:red;
-    border:2px solid black;
-  
+    border:2px solid black; 
 }
-
 
 }
