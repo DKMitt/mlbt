@@ -1,7 +1,34 @@
-.booksAvailable {
+@media screen and (min-width: 400px) {
+
+
+
+.booksTable {
+  float:left;
+  align-content: center;
+  width:100%;
   border:2px solid black;
   background-color: yellow;
+  height: 600px;
+  width: 700px;
+  position:relative;
 
 }
 
+.footer{
+    align-content:center;
+    width:100%;
+    float:left;
+    position:fixed;
+    bottom:0;
+    left:50%;
+    margin-left:-200px; /*negative half the width */
+    width:400px;
+    height:50px;
+    text-align:center;
+    background-color:red;
+    border:2px solid black;
+  
+}
 
+
+}
