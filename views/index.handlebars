@@ -1,71 +1,73 @@
-<div class="container">
-	
-	<div class="row">
-	    <div class="center col-sm-12">
-			<img src="./images/logo.jpg" alt="Mini Library Book App">
-	        <h1>Mini Library Book App</h1>
-	        <p></p>
-	    </div>
-  	</div>
-	<!-- end .row -->
+<div class = "table">  
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Index</div>
 
-	<div class="row">
-	    <div class="col-sm-2">
-	    </div>
-  	</div>
-	
-	<div class="">
-	    <div class="center col-sm-8">
+    <!-- Table -->
+    <table class="table">
 
-			<div class="container">
-            
-			  <table class="table table-hover">
-			    <thead>
-				      <tr>
-				        <th>Title</th>
-				        <th>Author</th>
-				        <th>Available</th>
-				        <th>Request</th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				      <tr tabindex="1">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="2">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="3">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				      <tr tabindex="4">
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				        <td></td>
-				      </tr>
-				    </tbody>
-				  </table>
-				</div>
-
-	    </div>
+    <h1>Northwestern Logo Here</h1>
 
 
-		<div class="">
-		    <div class="col-sm-3">
-		    </div>
-  		</div>
-	
-  	</div>
-	<!-- end .row -->
 
+    <div class = "test">
+      
+        <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Book Checkout</div>
+          <div class="row">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+     
+            <ul>
+              {{#each book}}
+                {{#unless this.status}}
+                  <li>
+                    {{this.name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="borrowed" value="true">
+                      <button type="submit">Return</button>
+                    </form>
+
+                    {{> book/delete-book}}
+                  </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+
+            <h2>Books that are available</h2>
+
+            <ul>
+              {{#each book}}
+                {{#if this.status}}
+                  <li>
+                    {{this.name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="return" value="false">
+                      <button type="submit">Return Book</button>
+                    </form>
+
+                    {{> book/delete-book}}
+                  </li>
+                {{/if}}
+              {{/each}}
+            </ul>
+
+            <form class="create-update-form" action="/" method="POST">
+            </form>
+          </div>
+          </table>
+          </div>
+        </div>
+      </table
+    
+    </div>   
 </div>
