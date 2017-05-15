@@ -23,13 +23,13 @@ router.get("/", function(req, res) {
   }); 
 });
 
-router.post("/", function(req, res) {
-   console.log(req.body);
-  //  admin.createNewBook([req.body.books], function() {
-  //     res.redirect("/");
-  // }); 
-  res.end()
-});
+// router.post("/", function(req, res) {
+//    console.log(req.body);
+//   //  admin.createNewBook([req.body.books], function() {
+//   //     res.redirect("/");
+//   // }); 
+//   res.end()
+// });
 
 
 //=================
@@ -42,7 +42,7 @@ router.get("/admin", function(req, res) {
       books: data
     };
     console.log(booksObject);
-    res.render("admin", booksObject);
+    res.render("checkout", booksObject);
   }); 
 });
 
@@ -51,7 +51,7 @@ router.post("/admin", function(req, res) {
   mlbt.create([
     req.body.books
   ], function() {
-    res.redirect("/admin");
+    res.redirect("/checkout");
   });
 });
 
@@ -75,6 +75,51 @@ router.post("/admin", function(req, res) {
 //     res.redirect("/");
 //   });
 // });
+
+
+//=================
+//====ADMIN======== 
+//=================
+//  Book Checkout 
+
+router.get("/checkout", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcheckout", booksObject);
+  }); 
+});
+
+
+//  Book CRUD 
+
+router.get("/crud", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcrud", booksObject);
+  }); 
+});
+
+
+//  Book Checkout 
+
+router.get("/checkout", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcheckout", booksObject);
+  }); 
+});
 
 
 //Export routes for server.js
