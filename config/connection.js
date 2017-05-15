@@ -1,6 +1,7 @@
-// setup mysql connection
+// Setup mysql connection
 var mysql = require("mysql");
 
+// Aaron's mySQL Connection
 var connection = mysql.createConnection({
 	port: 3306,
 	host: "localhost",
@@ -9,7 +10,7 @@ var connection = mysql.createConnection({
 	database: "msebooks"
 });
 
-// makes connection 
+// Makes connection and outputs to CLI
 connection.connect(function(err) {
 	if (err) {
 		console.error("error connecting: " + err.stack);
