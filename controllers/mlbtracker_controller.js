@@ -108,16 +108,16 @@ router.get("/crud", function(req, res) {
 });
 
 
-//  Book Checkout 
+//  User CRUD 
 
-router.get("/checkout", function(req, res) {
+router.get("/usercrud", function(req, res) {
    admin.all(function(data) {
     console.log(data);
-    var booksObject = {
-      books: data
+    var usersObject = {
+      users: data
     };
-    console.log(booksObject);
-    res.render("bookcheckout", booksObject);
+    console.log(usersObject);
+    res.render("usercrud", usersObject);
   }); 
 });
 
