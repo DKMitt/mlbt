@@ -9,17 +9,23 @@
   </div>
   <!-- end .row -->
 
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+  </div>
+  
+  <div class="">
+    
     <div class="center col-sm-8">
 
       <div class="booksTable">
-        <h2>Books Available</h2>
-        <hr>
+
         <table class="table table-hover">
           <thead>
             <tr>
               <th>Title</th>
               <th>Author</th>
-              <th>Availablity</th>
+              <th>Available</th>
               <th>Request</th>
             </tr>
           </thead>
@@ -48,26 +54,9 @@
                 <td></td>
                 <td></td>
               </tr>
-              <tr tabindex="5">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="6">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="7">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-              <ul>
+            </tbody>
+        </table>
+        <ul>
               {{#each book}}
                 {{#unless this.status}}
                   <li>
@@ -84,7 +73,8 @@
               {{/each}}
             </ul>
 
-            
+            <h2>Books that are available</h2>
+
             <ul>
               {{#each book}}
                 {{#if this.status}}
@@ -101,8 +91,13 @@
                 {{/if}}
               {{/each}}
             </ul>
-            </tbody>
-        </table>
-       
 
-            
+            <form class="create-update-form" action="/" method="POST">
+            </form>
+          </div>
+          </table>
+          </div>
+        </div>
+      </table>
+    </div>   
+</div>
