@@ -19,13 +19,14 @@
     <div class="center col-sm-8">
 
       <div class="booksTable">
-
+        <h2>Books Available</h2>
+        <hr>
         <table class="table table-hover">
           <thead>
             <tr>
               <th>Title</th>
               <th>Author</th>
-              <th>Available</th>
+              <th>Availablity</th>
               <th>Request</th>
             </tr>
           </thead>
@@ -54,9 +55,8 @@
                 <td></td>
                 <td></td>
               </tr>
-            </tbody>
-        </table>
-        <ul>
+
+              <ul>
               {{#each book}}
                 {{#unless this.status}}
                   <li>
@@ -73,8 +73,7 @@
               {{/each}}
             </ul>
 
-            <h2>Books that are available</h2>
-
+            
             <ul>
               {{#each book}}
                 {{#if this.status}}
@@ -91,13 +90,8 @@
                 {{/if}}
               {{/each}}
             </ul>
+            </tbody>
+        </table>
+       
 
-            <form class="create-update-form" action="/" method="POST">
-            </form>
-          </div>
-          </table>
-          </div>
-        </div>
-      </table>
-    </div>   
-</div>
+            
