@@ -2,107 +2,47 @@
   
   <div class="row">
     <div class="center col-sm-12">
-    <img src="./images/logo.jpg" alt="Mini Library Book App">
+      <img src="./images/logo.jpg" alt="Mini Library Book App">
       <h1>Mini Library Book Application</h1>
       <p></p>
     </div>
   </div>
   <!-- end .row -->
 
-    <div class="center col-sm-8">
+  <div class="center col-sm-8">
 
-      <div class="booksTable">
-        <h2>Books Available</h2>
-        <hr>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Availablity</th>
-              <th>Request</th>
-            </tr>
-          </thead>
-            <tbody>
-              <tr tabindex="1">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="2">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="3">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="4">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="5">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="6">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr tabindex="7">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-              <ul>
-              {{#each book}}
-                {{#unless this.status}}
-                  <li>
-                    {{this.name}}
-
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
-                      <input type="hidden" name="borrowed" value="true">
-                      <button type="submit">Return</button>
-                    </form>
-
-                    {{> book/delete-book}}
-                  </li>
-                {{/unless}}
-              {{/each}}
-            </ul>
-
-            
-            <ul>
-              {{#each book}}
-                {{#if this.status}}
-                  <li>
-                    {{this.name}}
-
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
-                      <input type="hidden" name="return" value="false">
-                      <button type="submit">Return Book</button>
-                    </form>
-
-                    {{> book/delete-book}}
-                  </li>
-                {{/if}}
-              {{/each}}
-            </ul>
-            </tbody>
-        </table>
+    <div class="booksTable">
+      <h2>Books Available</h2>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Edition</th>
+            <th>ISBN</th>
+            <th>Publisher</th>
+            <th>Available</th>
+          </tr>
+        </thead>
+          <tbody>
+            {{#each books}}
+            {{#if this.status}}
+            <tr tabindex="1">
+              <td>{{this.title}}</td>
+              <td>{{this.author}}</td>
+              <td>{{this.edition}}</td>
+              <td>{{this.ISBN}}</td>
+              <td>{{this.publisher}}</td>
+              <td>{{this.status}}</td>
+            </tr> 
+            {{/if}}
+            {{/each}}
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
        
 
             
