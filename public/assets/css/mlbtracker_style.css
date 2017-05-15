@@ -24,6 +24,15 @@ hr {
     border-color: black;
 }
 
+.table-nonfluid {
+   width: 93% !important
+}
+
+.scroll {
+    clear: both;
+	height: 350px;
+	overflow: auto;	
+}
 
 .footer{
     align-content:center;
@@ -41,5 +50,8 @@ hr {
     border:2px solid black; 
     margin-top:10px;
 }
+
+.right {
+	text-align: right;
 
 }

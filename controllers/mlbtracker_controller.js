@@ -77,5 +77,38 @@ router.post("/admin", function(req, res) {
 // });
 
 
+//=================
+//====ADMIN======== 
+//=================
+//  Book Checkout 
+
+router.get("/checkout", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcheckout", booksObject);
+  }); 
+});
+
+
+//  Book CRUD 
+
+router.get("/crud", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcrud", booksObject);
+  }); 
+});
+
+
+
+
 //Export routes for server.js
 module.exports = router;
