@@ -6,7 +6,7 @@ var connection = require("../config/connection.js");
 var orm = {
     //Selecting all for SQL Statement
     all: function(tableInput, callback) {
-        var queryString = "SELECT * FROM ??";
+        var queryString = "SELECT * FROM ?? ORDER BY title ASC";
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) {
                 throw err;

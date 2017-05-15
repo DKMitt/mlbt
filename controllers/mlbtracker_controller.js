@@ -5,7 +5,7 @@ var router = express.Router();
 
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
-var user = mlbt.user;
+// var user = mlbt.user;  // only redering full catalog from admin
 var admin = mlbt.admin;
 //Creating routes for index 
 
