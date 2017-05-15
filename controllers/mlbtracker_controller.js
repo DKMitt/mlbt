@@ -108,18 +108,6 @@ router.get("/crud", function(req, res) {
 });
 
 
-//  Book Checkout 
-
-router.get("/checkout", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var booksObject = {
-      books: data
-    };
-    console.log(booksObject);
-    res.render("bookcheckout", booksObject);
-  }); 
-});
 
 
 //Export routes for server.js
