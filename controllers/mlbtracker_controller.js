@@ -121,6 +121,5 @@ router.get("/usercrud", function(req, res) {
   }); 
 });
 
-
 //Export routes for server.js
 module.exports = router;
