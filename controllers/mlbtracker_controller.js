@@ -108,7 +108,18 @@ router.get("/crud", function(req, res) {
 });
 
 
+//  User CRUD 
 
+router.get("/usercrud", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var usersObject = {
+      users: data
+    };
+    console.log(usersObject);
+    res.render("usercrud", usersObject);
+  }); 
+});
 
 //Export routes for server.js
 module.exports = router;
