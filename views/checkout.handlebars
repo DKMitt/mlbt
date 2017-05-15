@@ -2,44 +2,43 @@
 	
 	
 	<div class="row">
-	    <div class="center col-sm-12">
-			<img src="./images/logo.jpg" alt="Mini Library Book App">
-	        <h1>Mini Library Book App</h1>
-	        <p></p>
+	    <div class="col-sm-7">
+			<br>
+			<img src="./images/logo.jpg" alt="Mini Library Book App">      
+	    </div>
+		<div class="col-sm-5">
+			<h1>Mini Library Book App</h1>
+	        <p>by Team Book Slingers</p>
+	        <p class="right"><a href="#">Edit Users</a>  |  <a href="#">Edit Books</>  |  <a href="#">Checkout Book</a></p>
 	    </div>
   	</div>
+	<hr>
+	<div class="row">	
 
-
-	<div class="row">
 	    <div class="col-sm-2">
 	    </div>
   	</div>
 	
 	<div class="">
-	    <div class="center col-sm-8">
+	    <div class="col-sm-8">
 
-			<div class="container">
-            
-
-
-				  <table class="table table-hover">
+			<div class="container scroll">
+				<table class="table table-hover table-nonfluid">
 				    <thead>
 					     <tr>
 					        <th>Title</th>
 					        <th>Author</th>
-					        <th>edition</th>
+					        <th>Edition</th>
 					        <th>ISBN</th>
 					        <th>Publisher</th>
 					        <th>Available</th>
 {{!-- 					        <th>Request</th> --}}
 					     </tr>
-					</thead>
-					    
-					<tbody>
-					            {{#each books}}
-					 {{#if this.status}}
-
-			 	
+					</thead>					    
+					<tbody class="">
+						{{#each books}}
+					 		{{#if this.status}}
+		 	
 			 		<tr tabindex="1">
 				        <td>{{this.title}}</td>
 				        <td>{{this.author}}</td>
@@ -49,17 +48,26 @@
 				        <td>{{this.status}}</td>
 				       
 				      </tr>
+							{{/if}}
+						{{/each}}
+					</tbody>
+			 	</table>
+			</div>
 
-		  {{/if}}
-		{{/each}}
-				</tbody>
-			 </table>
 		</div>
 
-	  </div>
-
 	</div>
+	
+	<div class="col-sm-2">
+    </div>
+
 </div> 
 
+<div class="container">
+	<div class="row">
 
+
+	<hr>
+	</div>
+</div>	
 
