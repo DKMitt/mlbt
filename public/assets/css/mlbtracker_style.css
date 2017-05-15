@@ -2,13 +2,15 @@
 
 .booksTable {
   float:left;
-  align-content: center;
+  align-content:center;
   width:100%;
-  border:2px solid black;
+  border:3px solid black;
   background-color: yellow;
-  height: 600px;
-  width: 700px;
-  position:relative;
+  height: 500px;
+  width: 800px;
+  position:fixed;
+  overflow: auto;
+
 }
 
 hr { 
@@ -28,14 +30,16 @@ hr {
     width:100%;
     float:left;
     position:fixed;
-    bottom:0;
+    bottom:0px;
     left:50%;
     margin-left:-200px; /*negative half the width */
     width:400px;
     height:50px;
     text-align:center;
+    text-orientation:fixed;
     background-color:red;
     border:2px solid black; 
+    margin-top:10px;
 }
 
 }
