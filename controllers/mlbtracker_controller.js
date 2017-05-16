@@ -49,9 +49,14 @@ router.get("/admin", function(req, res) {
 
 //  Book CRUD --- adding book
 
+router.get("/crud", function(req, res) {
+    res.render("bookcrud");
+}); 
+
+
 router.post("/crud", function(req, res) {
   console.log("/crud post: " + req.body.books);
-  mlbt.createNewBook([
+  admin.createNewBook([
     req.body.books
   ], function() {
     res.redirect("/admin");
