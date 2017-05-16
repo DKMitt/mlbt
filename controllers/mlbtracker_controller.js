@@ -7,11 +7,12 @@ var router = express.Router();
 var mlbt = require("../models/mlbtracker.js");
 // var user = mlbt.user;  // only redering full catalog from admin
 var admin = mlbt.admin;
-//Creating routes for index 
+
 
 //=================
 //====USER=========
 //=================
+//Creating routes for index 
 router.get("/", function(req, res) {
    admin.all(function(data) {
     console.log(data);
@@ -41,19 +42,58 @@ router.get("/admin", function(req, res) {
     var booksObject = {
       books: data
     };
-    console.log(booksObject);
     res.render("checkout", booksObject);
   }); 
 });
 
-router.post("/admin", function(req, res) {
-  console.log(req.body.books);
-  mlbt.create([
-    req.body.books
-  ], function() {
-    res.redirect("/checkout");
+//  Book CRUD --- adding book
+router.post("/crud", function(req, res) {
+  console.log("this is what i'm getting" + req.body.books);
+  mlbt.create([req.body.books]
+  , function() {
+    res.redirect("/admin");
   });
 });
+
+//  Book Checkout --- checking out the book 
+
+router.get("/checkout", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var booksObject = {
+      books: data
+    };
+    console.log(booksObject);
+    res.render("bookcheckout", booksObject);
+  }); 
+});
+
+
+
+//  User CRUD 
+
+router.get("/usercrud", function(req, res) {
+   admin.all(function(data) {
+    console.log(data);
+    var usersObject = {
+      users: data
+    };
+    console.log(usersObject);
+    res.render("usercrud", usersObject);
+  }); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 // router.put("/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
@@ -78,48 +118,6 @@ router.post("/admin", function(req, res) {
 
 
 //=================
-//====ADMIN======== 
-//=================
-//  Book Checkout 
-
-router.get("/checkout", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var booksObject = {
-      books: data
-    };
-    console.log(booksObject);
-    res.render("bookcheckout", booksObject);
-  }); 
-});
-
-
-//  Book CRUD 
-
-router.get("/crud", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var booksObject = {
-      books: data
-    };
-    console.log(booksObject);
-    res.render("bookcrud", booksObject);
-  }); 
-});
-
-
-//  User CRUD 
-
-router.get("/usercrud", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var usersObject = {
-      users: data
-    };
-    console.log(usersObject);
-    res.render("usercrud", usersObject);
-  }); 
-});
 
 //Export routes for server.js
 module.exports = router;
