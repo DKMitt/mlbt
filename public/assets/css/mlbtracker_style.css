@@ -37,6 +37,7 @@ hr {
   border-color:#CCC;
   height:500px;
   margin-left: 100px;
+  width:300px;
 
 }
 
@@ -55,6 +56,7 @@ hr {
     background-color:red;
     border:2px solid black; 
     margin-top:10px; */
+    /*margin-left: 600px;*/
   
 }
 
