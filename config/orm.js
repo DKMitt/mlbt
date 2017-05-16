@@ -16,9 +16,9 @@ var orm = {
     },
 
     //Inserting a new item for SQL Statement
-    create: function(tableInput, colName, vals, callback) {
-        var queryString = "INSERT INTO ?? ( ?? ) VALUES (?)";
-        connection.query(queryString, [tableInput, colName, vals], function(err, result) {
+    create: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
+        var queryString = "INSERT INTO ?? ( ?? ?? ?? ?? ?? ) VALUES (? ? ? ? ?)";
+        connection.query(queryString, [tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5], function(err, result) {
             if (err) {
                 throw err;
             }
@@ -34,6 +34,21 @@ var orm = {
     //         callback(result);
     //     });
     // }  
+
+
+      //DELETE
+      delete: function (bookID, callback) {
+        var query = "DELETE FROM ?? WHERE id=?";
+
+        connection.query(query, function (err, results) {
+          if(err) throw err;
+
+          console.log(results); 
+          callback(results);
+      
+      
+    });
+  }
 };
 
 //Exporting ORM object for model

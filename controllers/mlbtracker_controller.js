@@ -57,7 +57,11 @@ router.get("/crud", function(req, res) {
 router.post("/crud", function(req, res) {
   console.log("/crud post: " + req.body.books);
   admin.createNewBook([
-    req.body.books
+    req.body.bTitle,
+    req.body.bAuthor,
+    req.body.bEdition,
+    req.body.bISBN,
+    req.body.bpublisher
   ], function() {
     res.redirect("/admin");
   });
