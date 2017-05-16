@@ -1,13 +1,12 @@
 <div class="container">
 	
-	
 	<div class="row">
 	    <div class="col-sm-7">
 			<br>
 			<img src="./images/logo.jpg" alt="Mini Library Book App">      
 	    </div>
 		<div class="col-sm-5">
-			<h1>Mini Library Book App</h1>
+			<h1>Mini Library Book Application</h1>
 	        <p>by Team Book Slingers</p>
 	    </div>
   	</div>
@@ -15,26 +14,59 @@
 	<div class="row">	
 	
 	<div class="col-sm-8">
-
-
-
-
-
+		 <div class="booksTable">
+      <h2>Books Available</h2>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Edition</th>
+            <th>ISBN</th>
+            <th>Publisher</th>
+            <th>Available</th>
+          </tr>
+        </thead>
+          <tbody>
+            {{#each books}}
+            {{#if this.status}}
+            <tr tabindex="1">
+              <td>{{this.title}}</td>
+              <td>{{this.author}}</td>
+              <td>{{this.edition}}</td>
+              <td>{{this.ISBN}}</td>
+              <td>{{this.publisher}}</td>
+              <td>{{this.status}}</td>
+            </tr> 
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
 	</div>
-		<div class="col-sm-4"
-			<h3>Request Book</h3>
-	        
-	    </div>
+	
+	<div class="col-sm-4"> 
+		<div class="emailBooks">	 
+			<div class="container">
+				<h2>Request Book</h2>
+        <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.</p>
+				  <table class="table table-hover">
+            <form action="mailto:jeannine-hall@northwestern.edu" method="post" enctype="text/plain">
+              Name: <input type="text" name="fname"><br>
+              Email: <input type="text" name="lname"><br>
+              Comment:<br>
+							<input type="text" name="Book Request" size="50"><br><br>
+              <input type="submit" value="Send Email">
+              <input type="reset" value="Reset">	
+            </form>
+          </table>
+			</div>
+		</div>
+	</div>	
+</div>	
 
 
 	 
-	</div> 
 
-<div class="container">
-	<div class="row">
-
-
-	<hr>
-	</div>
-</div>	
 
