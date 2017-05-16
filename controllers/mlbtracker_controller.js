@@ -46,11 +46,14 @@ router.get("/admin", function(req, res) {
   }); 
 });
 
+
 //  Book CRUD --- adding book
+
 router.post("/crud", function(req, res) {
-  console.log("this is what i'm getting" + req.body.books);
-  mlbt.create([req.body.books]
-  , function() {
+  console.log("/crud post: " + req.body.books);
+  mlbt.createNewBook([
+    req.body.books
+  ], function() {
     res.redirect("/admin");
   });
 });

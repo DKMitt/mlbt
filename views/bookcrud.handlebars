@@ -8,37 +8,36 @@
 		<div class="col-sm-5">
 			<h1>Mini Library Book App</h1>
 	        <p>by Team Book Slingers</p>
-	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Edit Users</a>  |  <a href="/crud">Edit Books</>  |  <a href="/checkout">Checkout Book</a></p>
+	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Activity</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
 	    </div>
   	</div>
 	<hr>
 
 	<div class="row">
 	
-	<form class="form-horizontal" role="form" action="/crud" method="POST">
+	<form action="/crud" method="POST" class="form-horizontal" role="form">
+
 	<div class="container">
-		<div class="container col-sm-6">
+		<div class="container col-sm-12">
 		<h2>Book Modification</h2>
 			<br>
 	      	<div class="col-sm-12"><label>Book Title</label><input class="form-control" type="text" placeholder="Book Title"></div>
 	      	<div class="col-sm-12"><label>Book Author</label><input class="form-control" type="text" placeholder="Book Author"></div>
 	      	<div class="col-sm-12"><label>Edition</label><input class="form-control" type="text" placeholder="Edition"></div>
 	      	<div class="col-sm-12"><label>ISBN</label><input class="form-control" type="text" placeholder="ISBN"></div>
+	      	<div class="col-sm-12"><label>Publisher</label><input class="form-control" type="text" placeholder="Publisher"></div>
+
 
 		</div><br>
 
-		<div class="container col-sm-6">
-		<h2></h2><br><br>
-			<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" type="text" placeholder="Checkout Date"></div>
-	      	<div class="col-sm-12"><label>Return Date</label><input class="form-control" type="text" placeholder="Return Date"></div>
-	      	<div class="col-sm-12"><label>Due Date</label><input class="form-control" type="text" placeholder="Due Date"></div>
-	      	<div class="col-sm-12"><label>Availability</label><input class="form-control" type="text" placeholder="Availability"></div>
-
+		
 		<div class="form-group">
 	      <div class="col-md-12 admin-center">
 	    	<br>  	
 			<br>
+
 	        <button class="btn btn-success" type="Submit">Submit</button>
+
 	      </div>
 	    </div>
 
