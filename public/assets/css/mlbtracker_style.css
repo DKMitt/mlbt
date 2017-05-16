@@ -4,9 +4,10 @@
   float:left;
   align-content:center;
   width:100%; 
-  height: 500px;
+  height: 600px;
   width: 800px;
   overflow: auto;
+  text-align:center;
 
 }
 
@@ -32,9 +33,11 @@ hr {
 }
 
 .emailBooks {
-  border:2px solid black;
-  height:300px;
+  border:1px;
+  border-color:#CCC;
+  height:500px;
   margin-left: 100px;
+
 }
 
 .footer{
