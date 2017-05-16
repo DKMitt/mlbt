@@ -27,9 +27,7 @@ var routes = require("./controllers/mlbtracker_controller.js");
 app.use("/", routes);
 
 app.listen(PORT, function() {
-    console.log("Server Operational");
-    console.log(" ");
-    console.log("Listening on port: " + PORT);
 	console.log(" ");
-	console.log("----------------------------- ");
+    console.log("Server Operational");
+    console.log("Listening on port: " + PORT);
 });
