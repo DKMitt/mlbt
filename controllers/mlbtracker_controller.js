@@ -46,12 +46,12 @@ router.get("/admin", function(req, res) {
   }); 
 });
 
-router.post("/admin", function(req, res) {
-  console.log(req.body.books);
-  mlbt.create([
+router.post("/crud", function(req, res) {
+  console.log("/crud post: " + req.body.books);
+  mlbt.createNewBook([
     req.body.books
   ], function() {
-    res.redirect("/checkout");
+    res.redirect("/admin");
   });
 });
 
