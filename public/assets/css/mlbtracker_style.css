@@ -3,9 +3,7 @@
 .booksTable {
   float:left;
   align-content:center;
-  width:100%;
-  border:3px solid black;
-  background-color: yellow;
+  width:100%; 
   height: 500px;
   width: 800px;
   position:fixed;
@@ -29,9 +27,13 @@ hr {
 }
 
 .scroll {
-    clear: both;
+  clear: both;
 	height: 350px;
 	overflow: auto;	
+}
+
+.emailBooks {
+  
 }
 
 .footer{
@@ -49,6 +51,7 @@ hr {
     background-color:red;
     border:2px solid black; 
     margin-top:10px; */
+  
 }
 
 .right {
