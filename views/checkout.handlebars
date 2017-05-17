@@ -46,10 +46,15 @@
 				        <td>{{this.ISBN}}</td>
 				        <td>{{this.publisher}}</td>
 				        <td>{{this.status}}</td>
-				        <td><form method="POST" action="/" class="button-size">
-							<button class="btn-sm btn-warning" type="Edit">E</button></form>
+				        <td>
+				        	<form action="/admin{{this.id}}?_method=update" method="POST" class="button-size">
+					        	<input type="hidden" name="status" value="false">
+								<button class="btn-sm btn-warning" type="submit">X</button>
+							</form>
+															
 							<form action="/?_method=PUT" method="POST" class="button-size">
- 							<button class="btn-sm btn-danger" type="Delete">X</button></form>
+	 							<button class="btn-sm btn-danger" type="Edit">E</button>
+ 							</form>
 				        </td>
 
 				       
