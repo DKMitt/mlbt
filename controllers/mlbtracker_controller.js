@@ -77,24 +77,26 @@ router.get("/crud", function(req, res) {
 
 
 router.post("/crud", function(req, res) {
-  console.log("posting to crud");
-  
-  var bookTitle = req.body.bTitle;
-  var bookAuthor = req.body.bAuthor;
-  var bookEdition = req.body.bEdition;
-  var bookISBN = req.body.bISBN;
-  var bookPublisher = req.body.bpublisher;
 
+  console.log("/crud post: " + req);
+  console.log("/crud post: " + req.body.bTitle);
+  console.log("/crud post: " + req.body.bAuthor);
+  console.log("/crud post: " + req.body.bEdition);
+  console.log("/crud post: " + req.body.bISBN);
+  console.log("/crud post: " + req.body.bpublisher);
+  // console.log("/crud post: " + req.body);
   admin.createNewBook(
-    bookTitle,
-    bookAuthor,
-    bookEdition,
-    bookISBN,
-    bookPublisher
-  )
+    req.body.bTitle,
+    req.body.bAuthor,
+    req.body.bEdition,
+    req.body.bISBN,
+    req.body.bpublisher,
+    function() {
+      res.redirect("/admin");
+    }
+  );
+});
 
-    res.redirect("/admin");
-})
 
 //  Book Checkout --- checking out the book 
 
