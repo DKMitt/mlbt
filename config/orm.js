@@ -17,7 +17,7 @@ var orm = {
 
     //Inserting a new item for SQL Statement
     create: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
-        var queryString = "INSERT INTO ?? ( ?? ?? ?? ?? ?? ) VALUES (? ? ? ? ?)";
+        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
         connection.query(queryString, [tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5], function(err, result) {
             if (err) {
                 throw err;
