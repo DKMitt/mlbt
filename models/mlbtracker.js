@@ -11,13 +11,9 @@ var admin = {
     });
   },
   // The variables cols and vals are arrays.
-  // createNewBook: function( callback) {
-  //   orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], [val1, val2, val3, val4, val5], function(res) {
-  //     callback(res);
-  //   });
-  // },
 
   createNewBook: function(val1, val2, val3, val4, val5, callback) {
+    console.log(val1, val2, val3, val4, val5);
     orm.create("books", "title", "author", "edition", "ISBN", "publisher", val1, val2, val3, val4, val5, function(res) {
       callback(res);
     });
@@ -25,24 +21,24 @@ var admin = {
   //Updating the book status --- available / checkout 
   //should have two button click for available and unavailable 
   // NEED TO HAVE DATE
-  // updateBookStatus: function(update, colID, cb) {
+  // updateBookStatus: function(update, colID, callback) {
   //   orm.update("books", "status", update, "id" function(res) {
   //     cb(res);
   //   });
   // },//
   
-  // // delete: function(condition, cb) {
-  // //   orm.delete("books", condition, function(res) {
-  // //     cb(res);
-  // //   });
-  // // }
+  // delete: function(condition, callback) {
+  //   orm.delete("books", condition, function(res) {
+  //     cb(res);
+  //   });
+  // }
 };
 
 
 var user = {
-  // limited: function(cb) {
-  //   orm.limited("books", ["title", "author", "status"], function(res) {
-  //     cb(res);
+  // allUser: function(callback) {
+  //   orm.allUser("users", function(res) {
+  //     callback(res);
   //   });
   // },
 
@@ -55,5 +51,3 @@ module.exports = {
   user: user
 }
 
-// exports.admin = admin;
-// exports.user = user;
