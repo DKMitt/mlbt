@@ -55,16 +55,23 @@ router.get("/crud", function(req, res) {
 
 
 router.post("/crud", function(req, res) {
-  console.log("/crud post: " + req.body.books);
-  admin.createNewBook([
+  console.log("/crud post: " + req);
+  console.log("/crud post: " + req.body.bTitle);
+  console.log("/crud post: " + req.body.bAuthor);
+  console.log("/crud post: " + req.body.bEdition);
+  console.log("/crud post: " + req.body.bISBN);
+  console.log("/crud post: " + req.body.bpublisher);
+  // console.log("/crud post: " + req.body);
+  admin.createNewBook(
     req.body.bTitle,
     req.body.bAuthor,
     req.body.bEdition,
     req.body.bISBN,
-    req.body.bpublisher
-  ], function() {
-    res.redirect("/admin");
-  });
+    req.body.bpublisher,
+    function() {
+      res.redirect("/admin");
+    }
+  );
 });
 
 //  Book Checkout --- checking out the book 
