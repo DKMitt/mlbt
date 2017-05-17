@@ -31,15 +31,19 @@
 │   │   ├── css
 │   │   │   └── mlbtracker_style.css
 │   │   └── img
-│   │       └── mlbtracker.png
+│   │       └── logo.jpg
 │   └── test.html
 │
 ├── server.js
 │
 └── views
-    ├── index.handlebars
-    └── layouts
-        └── main.handlebars
+    ├── layouts
+          ├── bookcheckout.handlebars
+          ├── bookcrud.handlebars
+          ├── checkout.handlebars
+          ├── index.handlebars
+          └── usercrud.handlebars
+      
 ```
 
 - - -
@@ -51,11 +55,16 @@
   <li>Node.js</li>
   <li>Express</li>
   <li>Handlebars</li>
-  <li>ORM</li>
-  
+  <li>ORM</li>  
 </ul>
 
 - - - 
 
 ### How to use the application:
+<li>
+  1. Open your command-line user interface.
+  2. Clone MLBT repo 
+  3. Configure the <code>connection.js</code> to your MySQL Workbench settings.
+  4. Type <code>node server.js</code> to connect to the server.
+</li>
 
