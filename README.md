@@ -63,7 +63,7 @@ File Structure Diagram
 
 1. Open your command-line user interface
 2. Clone MLBT repo to your computer 
-3. Configure the <code>connection.js</code> file to your MySQL Workbench settings.
-4. Type <code>node server.js</code> to connect to the server.
+3. Configure the <code>connection.js</code> file to your MySQL Workbench settings
+4. Type <code>node server.js</code> to connect to the server
 
 
