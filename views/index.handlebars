@@ -1,71 +1,90 @@
+{{!-- All content stored in container --}}
 <div class="container">
-	
+  {{!-- Row for columns --}}
 	<div class="row">
-	    <div class="col-sm-7">
-			<br>
-			<img src="./images/logo.jpg" alt="Mini Library Book App">      
-	    </div>
-		<div class="col-sm-5">
-			<h1>Mini Library Book Application</h1>
+    {{!-- Stores logo, Columns 7/12  --}}
+    <div class="col-sm-7">
+  		<br>
+  		{{!-- Northwestern Logo --}}
+      <img src="./images/logo.jpg" alt="Mini Library Book App">   
+    </div>
+    {{!-- Title --}}
+    <div class="col-sm-5">
+			<h1>Mini Library Book Tracker</h1>
 	        <p>by Team Book Slingers</p>
 	    </div>
   	</div>
-	<hr>
-	<div class="row">	
 	
-	<div class="col-sm-8">
-		 <div class="booksTable">
-      <h2>Books Available</h2>
-      <hr>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Edition</th>
-            <th>ISBN</th>
-            <th>Publisher</th>
-            <th>Available</th>
-          </tr>
-        </thead>
-          <tbody>
-            {{#each books}}
-            {{#if this.status}}
-            <tr tabindex="1">
-              <td>{{this.title}}</td>
-              <td>{{this.author}}</td>
-              <td>{{this.edition}}</td>
-              <td>{{this.ISBN}}</td>
-              <td>{{this.publisher}}</td>
-              <td>{{this.status}}</td>
-            </tr> 
-            {{/if}}
-            {{/each}}
-          </tbody>
-        </table>
+  <hr>
+	
+  {{!-- Row for books avaible and email input content --}}
+  <div class="row">	
+    {{!-- 8/12 columns --}}
+  	<div class="col-sm-8">
+      {{!-- Table DIV outputting books from mysql database --}}
+      <div class="booksTable">
+        <h2>Books Available</h2>
+        
+        <hr>
+          
+          {{!-- Table  --}}
+          <table class="table table-hover">
+            {{!-- Table head --}}
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Edition</th>
+                <th>ISBN</th>
+                <th>Publisher</th>
+                <th>Available</th>
+              </tr>
+            </thead>
+              {{!-- Loops data into table rows --}}
+              <tbody>
+                {{#each books}}
+                {{#if this.status}}
+                <tr tabindex="1">
+                  <td>{{this.title}}</td>
+                  <td>{{this.author}}</td>
+                  <td>{{this.edition}}</td>
+                  <td>{{this.ISBN}}</td>
+                  <td>{{this.publisher}}</td>
+                  <td>{{this.status}}</td>
+                </tr> 
+                {{/if}}
+                {{/each}}
+              </tbody>
+            </table>
       </div>
-	</div>
+    </div>
 	
-	<div class="col-sm-4"> 
-		<div class="emailBooks">	 
-			
-				<h2>Book Request</h2>
-            <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.</p>
-            <form action="mailto:jeannine-hall@northwestern.edu" method="post" enctype="text/plain">
-              Name: <input type="text" name="Name:"><br><br>
-              Email: <input type="text" name="Email:"><br><br>
-              Comment:<br>
-							<input type="text" name="Book Request" size="50"><br><br>
-              
-              <div class="input-append"> 
-                <button class="btn btn-success">Submit</button>
-              </div>
-
-              <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
-            
-            </form>
-		</div>
-	</div>	
+  	{{!-- 4/12 columns span --}}
+    <div class="col-sm-4"> 
+  		{{!-- email books div --}}
+      <div class="emailBooks">	 
+  				<h2>Book Request</h2>
+              <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.
+              </p>
+              {{!-- Emails to Jeannine --}}
+              <form action="mailto:jeannine-hall@northwestern.edu" method="post" enctype="text/plain">
+                {{!-- name input box --}}
+                Name: <input type="text" name="Name:"><br><br>
+                {{!-- email input box --}}
+                email: <input type="text" name="Email:"><br><br>
+                {{!-- comment box --}}
+                Comment:<br>
+                <input type="text" name="Book Request" size="40"><br><br>
+                {{!-- submit button --}}
+                <div class="input-append"> 
+                  <button class="btn btn-success">Submit</button>
+                </div>
+                {{!-- reset button --}}
+                <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
+              </form>
+  		</div>
+  	</div>	
+  </div>
 </div>	
 
 
