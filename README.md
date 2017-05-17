@@ -61,10 +61,10 @@
 - - - 
 
 ### How to use the application:
-<li>
-  1. Open your command-line user interface.
-  2. Clone MLBT repo 
-  3. Configure the <code>connection.js</code> to your MySQL Workbench settings.
-  4. Type <code>node server.js</code> to connect to the server.
-</li>
+
+1. Open your command-line user interface.
+2. Clone MLBT repo 
+3. Configure the <code>connection.js</code> to your MySQL Workbench settings.
+4. Type <code>node server.js</code> to connect to the server.
+
 
