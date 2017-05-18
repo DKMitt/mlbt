@@ -81,6 +81,7 @@ router.post("/crud", function(req, res) {
 
 router.get("/checkout", function(req, res) {
    mlbt.allUser(function(data) {
+    console.log(data)
     var userObject = {
       users: data
     };
@@ -91,9 +92,17 @@ router.get("/checkout", function(req, res) {
 
 
 router.post("/checkout", function(req, res) {
-
-  
-  res.redirect("/admin");
+  mlbt.createCheckout(
+      req.body.name,
+      req.body.email,
+      req.body.netID,
+      req.body.checkout_date,
+      req.body.return_date,
+      req.body.due_date,
+      function() {
+        res.redirect("/admin");
+      }
+  );
 });
 
 //  User CRUD 
