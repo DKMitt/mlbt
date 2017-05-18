@@ -87,12 +87,15 @@ router.post("/crud", function(req, res) {
 //  Book Checkout --- checking out the book 
 
 router.get("/checkout", function(req, res) {
-  admin.all(function(data) {
-    
-    console.log(booksObject);
-    res.render("bookcheckout");
-  });
+   mlbt.allUser(function(data) {
+    var userObject = {
+      users: data
+    };
+    res.render("bookcheckout", userObject);
+  }); 
+
 });
+
 
 router.post("/checkout", function(req, res) {
 
