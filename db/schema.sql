@@ -27,7 +27,7 @@ CREATE TABLE users (
     PRIMARY KEY (id)
     );
 
-# pulling the book into a scroll to pick -------------- that way it would match the book id
+# pulling the book into a scroll to pick -------k------- that way it would match the book id
 
 CREATE TABLE checkout (
     id INTEGER (11) AUTO_INCREMENT NOT NULL,
