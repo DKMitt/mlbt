@@ -10,50 +10,39 @@ var admin = {
       callback(res);
     });
   },
+  allUser: function(callback) {
+    orm.allUser("users", function(res) {
+      callback(res);
+    });
+  },
   // The variables cols and vals are arrays.
-  // createNewBook: function( callback) {
-  //   orm.create("books", ["title", "author", "edition", "ISBN", "publisher"], [val1, val2, val3, val4, val5], function(res) {
-  //     callback(res);
-  //   });
-  // },
 
   createNewBook: function(val1, val2, val3, val4, val5, callback) {
+    console.log(val1, val2, val3, val4, val5);
     orm.create("books", "title", "author", "edition", "ISBN", "publisher", val1, val2, val3, val4, val5, function(res) {
       callback(res);
     });
-  }
+  },
   //Updating the book status --- available / checkout 
   //should have two button click for available and unavailable 
-  // NEED TO HAVE DATE
-  // updateBookStatus: function(update, colID, cb) {
-  //   orm.update("books", "status", update, "id" function(res) {
-  //     cb(res);
-  //   });
-  // },//
+  updateBook: function(val1, val2, val3, val4, val5, callback) {
+    console.log(val1, val2, val3, val4, val5);
+    orm.update("books", "title", "author", "edition", "ISBN", "publisher", val1, val2, val3, val4, val5, function(res) {
+      callback(res);
+    });
+  },
   
-  // // delete: function(condition, cb) {
-  // //   orm.delete("books", condition, function(res) {
-  // //     cb(res);
-  // //   });
-  // // }
-};
-
-
-var user = {
-  // limited: function(cb) {
-  //   orm.limited("books", ["title", "author", "status"], function(res) {
-  //     cb(res);
-  //   });
-  // },
-
-  //user need to send a request to admin for the books ---notification ///email
+  delete: function(data, callback) {
+    orm.delete("books", data, function(res) {
+      callback(res);
+    });
+  }
 };
 
 //Exporting the database function for the controller
-module.exports = {
-  admin: admin,
-  user: user
-}
+module.exports = admin;
+// module.exports = {
+//   admin: admin,
+//   user: user
+// }
 
-// exports.admin = admin;
-// exports.user = user;
