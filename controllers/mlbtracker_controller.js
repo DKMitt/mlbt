@@ -6,7 +6,7 @@ var router = express.Router();
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
 // var user = mlbt.user;  // only redering full catalog from admin
-var admin = mlbt.admin;
+// var admin = mlbt.admin;
 
 
 //=================
@@ -14,8 +14,7 @@ var admin = mlbt.admin;
 //=================
 //Creating routes for index 
 router.get("/", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
+   mlbt.all(function(data) {
     var booksObject = {
       books: data
     };
@@ -24,97 +23,22 @@ router.get("/", function(req, res) {
   }); 
 });
 
-// router.post("/", function(req, res) {
-//    console.log(req.body);
-//   //  admin.createNewBook([req.body.books], function() {
-//   //     res.redirect("/");
-//   // }); 
-//   res.end()
-// });
-
-
 //=================
 //====ADMIN======== 
 //=================
 
 router.get("/admin", function(req, res) {
-   admin.all(function(data) {
+   mlbt.all(function(data) {
     var booksObject = {
       books: data
     };
     res.render("checkout", booksObject);
   }); 
+
 });
 
 
-//  Book CRUD --- adding book
-
-router.get("/crud", function(req, res) {
-    res.render("bookcrud");
-}); 
-
-
-router.post("/crud", function(req, res) {
-  console.log("/crud post: " + req);
-  console.log("/crud post: " + req.body.bTitle);
-  console.log("/crud post: " + req.body.bAuthor);
-  console.log("/crud post: " + req.body.bEdition);
-  console.log("/crud post: " + req.body.bISBN);
-  console.log("/crud post: " + req.body.bpublisher);
-  // console.log("/crud post: " + req.body);
-  admin.createNewBook(
-    req.body.bTitle,
-    req.body.bAuthor,
-    req.body.bEdition,
-    req.body.bISBN,
-    req.body.bpublisher,
-    function() {
-      res.redirect("/admin");
-    }
-  );
-});
-
-//  Book Checkout --- checking out the book 
-
-router.get("/checkout", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var booksObject = {
-      books: data
-    };
-    console.log(booksObject);
-    res.render("bookcheckout", booksObject);
-  }); 
-});
-
-
-
-//  User CRUD 
-
-router.get("/usercrud", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
-    var usersObject = {
-      users: data
-    };
-    console.log(usersObject);
-    res.render("usercrud", usersObject);
-  }); 
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.put("/:id", function(req, res) {
+// router.update("/admin:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
 
 //   console.log("condition", condition);
@@ -127,13 +51,65 @@ router.get("/usercrud", function(req, res) {
 // });
 
 
-// router.delete("/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
+router.delete("/:id", function(req, res) {
+  console.log("got here");
+  var condition = "id = " + req.params.id; //1; DROP ALL TABLES; 
+  var data = {id: req.params.id}
+  console.log(req.params.id);
+  mlbt.delete(data, function() {
+    res.redirect("/admin");
+  });
+});
 
-//   mlbt.delete(condition, function() {
-//     res.redirect("/");
-//   });
-// });
+
+//  Book CRUD --- adding book
+
+router.get("/crud", function(req, res) {
+    res.render("bookcrud");
+}); 
+
+
+router.post("/crud", function(req, res) {
+
+  mlbt.createNewBook(
+    req.body.bTitle,
+    req.body.bAuthor,
+    req.body.bEdition,
+    req.body.bISBN,
+    req.body.bpublisher,
+    function() {
+      res.redirect("/admin");
+    }
+  );
+});
+
+
+//  Book Checkout --- checking out the book 
+
+router.get("/checkout", function(req, res) {
+   mlbt.allUser(function(data) {
+    var userObject = {
+      users: data
+    };
+    res.render("bookcheckout", userObject);
+  }); 
+
+});
+
+
+router.post("/checkout", function(req, res) {
+
+  
+  res.redirect("/admin");
+});
+
+//  User CRUD 
+
+router.get("/usercrud", function(req, res) {
+
+    res.render("usercrud");
+});
+
 
 
 //=================
