@@ -10,6 +10,11 @@ var admin = {
       callback(res);
     });
   },
+  allUser: function(callback) {
+    orm.allUser("users", function(res) {
+      callback(res);
+    });
+  },
   // The variables cols and vals are arrays.
 
   createNewBook: function(val1, val2, val3, val4, val5, callback) {
