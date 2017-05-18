@@ -50,9 +50,15 @@
 				        	<form action="/{{this.id}}?_method=DELETE" method="POST" class="button-size">
 					        	<input type="hidden" name="status" value="false">
 					 			<input type="hidden" name="id" value="{{this.id}}">
-								<button class="btn-sm btn-warning" type="submit">X</button>
+								<button class="btn-sm btn-danger" type="submit">X</button>
 							</form>
-															
+							<form action="/{{this.id}}?_method=PUT" method="POST" class="button-size">
+					        	<input type="hidden" name="status" value="false">
+					 			<input type="hidden" name="id" value="{{this.id}}">
+								<button class="btn-sm btn-warning" type="submit">E</button>
+							</form>
+													
+											
 							
 				        </td>
 
