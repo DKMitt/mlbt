@@ -14,16 +14,6 @@ var orm = {
             callback(result);
         });
     },
-    allUser: function(tableInput, callback) {
-        var queryString = "SELECT * FROM ?? ";
-        connection.query(queryString, [tableInput], function(err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    },
-
     //Inserting a new item for SQL Statement
     create: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
 
@@ -63,11 +53,32 @@ var orm = {
       
       
         });
-    }
+    },
     //======================== USER
-    
+    allUser: function(tableInput, callback) {
+        var queryString = "SELECT * FROM ?? ";
+        connection.query(queryString, [tableInput], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
+    //Inserting a new item for SQL Statement
+    userCheckout: function(tableInput, col1, col2, col3, col4, col5, col6, val1, val2, val3, val4, val5, val6, callback) {
+
+        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ??, ??) VALUES ( ?, ?, ?, ?, ?, ?)";
+
+        connection.query(queryString, [tableInput, col1, col2, col3, col4, col5, col6, val1, val2, val3, val4, val5, val6], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
   
 };
+
 
 //Exporting ORM object for model
 module.exports = orm;

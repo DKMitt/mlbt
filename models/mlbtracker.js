@@ -10,12 +10,7 @@ var admin = {
       callback(res);
     });
   },
-  allUser: function(callback) {
-    orm.allUser("users", function(res) {
-      callback(res);
-    });
-  },
-  // The variables cols and vals are arrays.
+    // The variables cols and vals are arrays.
 
   createNewBook: function(val1, val2, val3, val4, val5, callback) {
     console.log(val1, val2, val3, val4, val5);
@@ -36,7 +31,21 @@ var admin = {
     orm.delete("books", data, function(res) {
       callback(res);
     });
+  },
+  //============USER CHECKING OUT BOOK ===========
+  allUser: function(callback) {
+    orm.allUser("users", function(res) {
+      callback(res);
+    });
+  },
+  createCheckout: function(val1, val2, val3, val4, val5, val6, callback) {
+    console.log(val1, val2, val3, val4, val5, val6);
+    orm.userCheckout("users", "name", "email", "netID", "checkout_date", "return_date", "due_date", val1, val2, val3, val4, val5, val6, function(res) {
+      callback(res);
+    });
   }
+
+
 };
 
 //Exporting the database function for the controller
