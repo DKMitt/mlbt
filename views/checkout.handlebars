@@ -7,8 +7,9 @@
 			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
 	    </div>
 		<div class="col-sm-5 title">
-			<h1>Mini Library Book Tracker</h1>
+			<h1><b>Mini Library Book Tracker</b></h1>
 	        <p><i>by Team Book Slingers</i></p>
+	        <br>
 	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
 	    </div>
   	</div>
@@ -50,7 +51,7 @@
 				        	<form action="/{{this.id}}?_method=DELETE" method="POST" class="button-size">
 					        	<input type="hidden" name="status" value="false">
 					 			<input type="hidden" name="id" value="{{this.id}}">
-								<button class="btn-sm btn-warning" type="submit">X</button>
+								<button class="btn-sm btn-danger" type="submit">X</button>
 							</form>
 															
 							
