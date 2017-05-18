@@ -5,8 +5,8 @@ var router = express.Router();
 
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
-var user = mlbt.user;  // only redering full catalog from admin
-var admin = mlbt.admin;
+// var user = mlbt.user;  // only redering full catalog from admin
+// var admin = mlbt.admin;
 
 
 //=================
@@ -14,8 +14,7 @@ var admin = mlbt.admin;
 //=================
 //Creating routes for index 
 router.get("/", function(req, res) {
-   admin.all(function(data) {
-    console.log(data);
+   mlbt.all(function(data) {
     var booksObject = {
       books: data
     };
@@ -24,26 +23,18 @@ router.get("/", function(req, res) {
   }); 
 });
 
-// router.post("/", function(req, res) {
-//    console.log(req.body);
-//   //  admin.createNewBook([req.body.books], function() {
-//   //     res.redirect("/");
-//   // }); 
-//   res.end()
-// });
-
-
 //=================
 //====ADMIN======== 
 //=================
 
 router.get("/admin", function(req, res) {
-   admin.all(function(data) {
+   mlbt.all(function(data) {
     var booksObject = {
       books: data
     };
     res.render("checkout", booksObject);
   }); 
+
 });
 
 
@@ -52,7 +43,7 @@ router.get("/admin", function(req, res) {
 
 //   console.log("condition", condition);
 
-//   admin.update({
+//   mlbt.update({
 //     books: req.body.books
 //   }, condition, function() {
 //     res.redirect("/");
@@ -60,13 +51,15 @@ router.get("/admin", function(req, res) {
 // });
 
 
-// router.delete("/admin:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   admin.delete(condition, function() {
-//     res.redirect("/");
-//   });
-// });
+router.delete("/:id", function(req, res) {
+  console.log("got here");
+  var condition = "id = " + req.params.id; //1; DROP ALL TABLES; 
+  var data = {id: req.params.id}
+  console.log(req.params.id);
+  mlbt.delete(data, function() {
+    res.redirect("/admin");
+  });
+});
 
 
 //  Book CRUD --- adding book
@@ -78,14 +71,7 @@ router.get("/crud", function(req, res) {
 
 router.post("/crud", function(req, res) {
 
-  console.log("/crud post: " + req);
-  console.log("/crud post: " + req.body.bTitle);
-  console.log("/crud post: " + req.body.bAuthor);
-  console.log("/crud post: " + req.body.bEdition);
-  console.log("/crud post: " + req.body.bISBN);
-  console.log("/crud post: " + req.body.bpublisher);
-  // console.log("/crud post: " + req.body);
-  admin.createNewBook(
+  mlbt.createNewBook(
     req.body.bTitle,
     req.body.bAuthor,
     req.body.bEdition,
@@ -101,13 +87,11 @@ router.post("/crud", function(req, res) {
 //  Book Checkout --- checking out the book 
 
 router.get("/checkout", function(req, res) {
-  // admin.allUser(function(data) {
-  //   var booksObject = {
-  //     user: data
-  //   };
-  //   console.log(booksObject);
-  //   res.render("bookcheckout");
-  // });
+  admin.all(function(data) {
+    
+    console.log(booksObject);
+    res.render("bookcheckout");
+  });
 });
 
 router.post("/checkout", function(req, res) {
