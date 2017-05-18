@@ -21,19 +21,18 @@ CREATE TABLE users (
     name VARCHAR (255) NOT NULL,
     email VARCHAR (255) NOT NULL,
     netID VARCHAR (50) NOT NULL,
-    admin BOOLEAN DEFAULT false,
     checkout_date DATE,
     return_date DATE,
     due_date DATE,
     PRIMARY KEY (id)
     );
 
+# pulling the book into a scroll to pick -------k------- that way it would match the book id
 
 CREATE TABLE checkout (
     id INTEGER (11) AUTO_INCREMENT NOT NULL,
     user_id INTEGER (11) NOT NULL,
     book_id INTEGER (11) NOT NULL,
-    status BOOLEAN DEFAULT true,
     checkout_date DATE,
     return_date DATE,
     due_date DATE,
