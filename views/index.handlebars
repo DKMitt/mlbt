@@ -19,71 +19,74 @@
 	
   {{!-- Row for books avaible and email input content --}}
   <div class="row">	
-    {{!-- 8/12 columns --}}
-  	<div class="col-sm-8">
-      {{!-- Table DIV outputting books from mysql database --}}
-      <div class="booksTable">
-        <h2>Books Available</h2>
-        
-        <hr>
+    {{!-- container for columns --}}
+    <div class="container"> 
+      {{!-- 8/12 columns --}}
+    	<div class="container col-sm-8">
+        {{!-- Table DIV outputting books from mysql database --}}
+        <div class="booksTable">
+          <h2>Books Available</h2>
           
-          {{!-- Table  --}}
-          <table class="table table-hover">
-            {{!-- Table head --}}
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Edition</th>
-                <th>ISBN</th>
-                <th>Publisher</th>
-                <th>Available</th>
-              </tr>
-            </thead>
-              {{!-- Loops data into table rows --}}
-              <tbody>
-                {{#each books}}
-                {{#if this.status}}
-                <tr tabindex="1">
-                  <td>{{this.title}}</td>
-                  <td>{{this.author}}</td>
-                  <td>{{this.edition}}</td>
-                  <td>{{this.ISBN}}</td>
-                  <td>{{this.publisher}}</td>
-                  <td>{{this.status}}</td>
-                </tr> 
-                {{/if}}
-                {{/each}}
-              </tbody>
-            </table>
+          <hr>
+            
+            {{!-- Table  --}}
+            <table class="table table-hover">
+              {{!-- Table head --}}
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Edition</th>
+                  <th>ISBN</th>
+                  <th>Publisher</th>
+                  <th>Available</th>
+                </tr>
+              </thead>
+                {{!-- Loops data into table rows --}}
+                <tbody>
+                  {{#each books}}
+                  {{#if this.status}}
+                  <tr tabindex="1">
+                    <td>{{this.title}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.edition}}</td>
+                    <td>{{this.ISBN}}</td>
+                    <td>{{this.publisher}}</td>
+                    <td>{{this.status}}</td>
+                  </tr> 
+                  {{/if}}
+                  {{/each}}
+                </tbody>
+              </table>
+        </div>
       </div>
+  	
+    	{{!-- 4/12 columns span --}}
+      <div class="container col-sm-4"> 
+    		{{!-- email books div --}}
+        <div class="emailBooks">	 
+    				<h2>Book Request</h2>
+                <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.
+                </p>
+                {{!-- Emails to Jeannine --}}
+                <form action="mailto:matsci@northwestern.edu?subject=Book(s) Request" method="post" enctype="text/plain">
+                  {{!-- name input box --}}
+                  Name: <input type="text" name="Name:"><br><br>
+                  {{!-- email input box --}}
+                  Email: <input type="text" name="Email:"><br><br>
+                  {{!-- comment box --}}
+                  Comment:<br>
+                  <input type="text" name="Book Request" size="40"><br><br>
+                  {{!-- submit button --}}
+                  <div class="input-append"> 
+                    <button class="btn btn-success">Submit</button>
+                  </div>
+                  {{!-- reset button --}}
+                  <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
+                </form>
+    		</div>
+    	</div>	
     </div>
-	
-  	{{!-- 4/12 columns span --}}
-    <div class="col-sm-4"> 
-  		{{!-- email books div --}}
-      <div class="emailBooks">	 
-  				<h2>Book Request</h2>
-              <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.
-              </p>
-              {{!-- Emails to Jeannine --}}
-              <form action="mailto:matsci@northwestern.edu?subject=Book(s) Request" method="post" enctype="text/plain">
-                {{!-- name input box --}}
-                Name: <input type="text" name="Name:"><br><br>
-                {{!-- email input box --}}
-                Email: <input type="text" name="Email:"><br><br>
-                {{!-- comment box --}}
-                Comment:<br>
-                <input type="text" name="Book Request" size="40"><br><br>
-                {{!-- submit button --}}
-                <div class="input-append"> 
-                  <button class="btn btn-success">Submit</button>
-                </div>
-                {{!-- reset button --}}
-                <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
-              </form>
-  		</div>
-  	</div>	
   </div>
 </div>	
 
