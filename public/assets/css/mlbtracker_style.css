@@ -1,5 +1,13 @@
 @media screen and (min-width:400px) {
 
+
+.title {
+
+  font-family: 'Oxygen', sans-serif;
+  color:#4B0082;
+}
+
+
 .booksTable {
   float:left;
   align-content:center;
@@ -7,7 +15,8 @@
   height: 600px;
   width: 800px;
   overflow: auto;
-  text-align:center;  
+  text-align:center; 
+  font-family: 'Oxygen', sans-serif; 
   }
 }
 
@@ -27,6 +36,7 @@
   height:500px;
   margin-left: 100px;
   width:300px;
+  font-family: 'Oxygen', sans-serif;
 
 }
 
