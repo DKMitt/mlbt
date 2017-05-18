@@ -39,17 +39,21 @@
 						{{#each books}}
 					 		{{#if this.status}}
 		 	
-			 		<tr tabindex="1">
+			 		<tr tabindex="1" >
 				        <td>{{this.title}}</td>
 				        <td>{{this.author}}</td>
 				        <td>{{this.edition}}</td>
 				        <td>{{this.ISBN}}</td>
 				        <td>{{this.publisher}}</td>
 				        <td>{{this.status}}</td>
-				        <td><form method="POST" action="/" class="button-size">
-							<button class="btn-sm btn-warning" type="Edit">E</button></form>
-							<form action="/?_method=PUT" method="POST" class="button-size">
- 							<button class="btn-sm btn-danger" type="Delete">X</button></form>
+				        <td>
+				        	<form action="/{{this.id}}?_method=DELETE" method="POST" class="button-size">
+					        	<input type="hidden" name="status" value="false">
+					 			<input type="hidden" name="id" value="{{this.id}}">
+								<button class="btn-sm btn-warning" type="submit">X</button>
+							</form>
+															
+							
 				        </td>
 
 				       
@@ -78,5 +82,7 @@
 </div>	
 
 
-
-
+{{!-- <form action="/?_method=PUT" method="POST" class="button-size">
+	 							<button class="btn-sm btn-danger" type="Edit">E</button>
+ 							</form>
+ --}}
