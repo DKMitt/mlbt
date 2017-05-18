@@ -38,22 +38,15 @@ router.get("/admin", function(req, res) {
 });
 
 
-// router.update("/admin:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   console.log("condition", condition);
-
-//   mlbt.update({
-//     books: req.body.books
-//   }, condition, function() {
-//     res.redirect("/");
-//   });
-// });
+router.put("/:id", function(req, res) {
+  var data = {id: req.params.id}
+  mlbt.updateBook(data, function() {
+    res.redirect("/admin");
+  });
+});
 
 
 router.delete("/:id", function(req, res) {
-  console.log("got here");
-  var condition = "id = " + req.params.id; //1; DROP ALL TABLES; 
   var data = {id: req.params.id}
   console.log(req.params.id);
   mlbt.delete(data, function() {
@@ -88,6 +81,7 @@ router.post("/crud", function(req, res) {
 
 router.get("/checkout", function(req, res) {
    mlbt.allUser(function(data) {
+    console.log(data)
     var userObject = {
       users: data
     };
@@ -98,9 +92,17 @@ router.get("/checkout", function(req, res) {
 
 
 router.post("/checkout", function(req, res) {
-
-  
-  res.redirect("/admin");
+  mlbt.createCheckout(
+      req.body.name,
+      req.body.email,
+      req.body.netID,
+      req.body.checkout_date,
+      req.body.return_date,
+      req.body.due_date,
+      function() {
+        res.redirect("/admin");
+      }
+  );
 });
 
 //  User CRUD 

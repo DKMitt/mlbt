@@ -6,8 +6,9 @@
 			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
 	    </div>
 			<div class="col-sm-5 title">
-				<h1>Mini Library Book Tracker</h1>
+				<h1><b>Mini Library Book Tracker</b></h1>
 		        <p><i>by Team Book Slingers</i></p>
+		        <br>
 		        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
 		    </div>
 	  	</div>
@@ -17,20 +18,22 @@
 
 	<div class="row">
 	
-		<form class="form-horizontal" action="" method="post" role="form">
+		<form class="form-horizontal" action="/checkout" method="post" role="form">
 		<div class="container">
 			<div class="container col-sm-6"><br>
 			<h2>Checkout Book</h2>
 				<br>
 				<div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
 		      	<div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
-		      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="neID" type="text" placeholder="NetID"></div>
-		      	<div class="col-sm-12"><label>Book Title</label><input class="form-control" name="title" type="text" placeholder="Book Title"></div>
-	      		<div class="col-sm-12"><label>Book Author</label><input class="form-control" name="author" type="text" placeholder="Book Author"></div>
-	      		<div class="col-sm-12"><label>Edition</label><input class="form-control" name="edition" type="text" placeholder="Edition"></div>
-	      		<div class="col-sm-12"><label>ISBN</label><input class="form-control" name="ISBN" type="text" placeholder="ISBN"></div>
-	      		<div class="col-sm-12"><label>Publisher</label><input class="form-control" name="publisher" type="text" placeholder="Publisher"></div>
-		      
+		      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
+				<br>
+		{{!-- 		<select name="" id="">
+				    <option value="1">book title one</option>
+				    <option value="2">book title one</option>
+				    <option value="3">book title one</option>
+				    <option value="4">book title one</option>
+				</select> --}}
+
 
 			</div><br>
 
