@@ -23,6 +23,16 @@ router.get("/", function(req, res) {
   }); 
 });
 
+
+router.post('/', function(req, res) {
+    var frmSample = req.body.email;
+    console.log("post received: %s %s", frmSample);
+});
+
+
+
+
+
 //=================
 //====ADMIN======== 
 //=================

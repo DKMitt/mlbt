@@ -40,6 +40,11 @@
 
 }
 
+
+.requiredRow {
+  margin-left: 0px;
+}
+
 .footer{
 /*     align-content:center;
     width:100%;

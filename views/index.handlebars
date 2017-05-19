@@ -78,7 +78,11 @@
                   {{!-- name input box --}}
                   Name: <input type="text" name="Name:" size="30"><br><br>
                   {{!-- email input box --}}
-                  Email: <input type="text" name="Email:" size="30"><br><br>
+                  <div class="row requiredRow">
+                            <label for="email" id="email-ariaLabel">Email:</label>
+                            <input id="email" name="email" type="email" class="required" title="This is a required field" /> 
+                          </div> 
+                  <br>
                   {{!-- comment box --}}
                   Comment:<br>
                   <input type="text" name="Book Request" size="40"><br><br>
@@ -89,6 +93,7 @@
                   {{!-- reset button --}}
                   <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
                 </form>
+
     		</div>
     	</div>	
     </div>
