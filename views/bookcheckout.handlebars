@@ -5,59 +5,60 @@
 			<br>
 			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
 	    </div>
-			<div class="col-sm-5 title">
-				<h1><b>Mini Library Book Tracker</b></h1>
-		        <p><i>by Team Book Slingers</i></p>
-		        <br>
-		        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
-		    </div>
-	  	</div>
+		<div class="col-sm-5 title">
+			<h1><b>Mini Library Book Tracker</b></h1>
+	        <p><i>by Team Book Slingers</i></p>
+	        <br>
+	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
+	    </div>
 	
 		<hr>
 	</div>
 
 	<div class="row">
-	
-		<form class="form-horizontal" action="/checkout" method="post" role="form">
 		<div class="container">
+		<form class="form-horizontal" action="/checkout" method="post" role="form">
+		<form class="form-horizontal" action="/checkout/?_method=PUT" method="post" role="form">
 			<div class="container col-sm-6"><br>
-			<h2>Checkout Book</h2>
+				<h2>Checkout Book</h2>
 				<br>
 				<div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
 		      	<div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
 		      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
 				<br>
-				<select name="" id="">
-					{{#each books}}
-				    <option value="1">{{this.title}}</option>
-				    {{/each}}
-				</select>
 
 
 			</div><br>
 
 			<div class="container col-sm-6">
-			<h2></h2><br><br>
-				<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
-				<div class="col-sm-12"><label>Return Date</label><input class="form-control" name="return_date" type="date"></div>
-{{!-- 				<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div> --}}
-		      	<div class="col-sm-12"><label>Checkout / Checkin</label><input class="form-control" type="text" name="status" placeholder="Checkout / Checkin"></div>
-
-			<div class="form-group">
-		      <div class="col-md-12 admin-center">
-		    	<br>  	
+				<h2></h2><br><br>
+					<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
+					<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
 				<br>
-		        <button class="btn btn-success" type="Submit">Submit</button>
-		     	</div>
-		  </div>
+				<select name="bookTitle" id="books">
+					{{#each books}}
+				    <option value="1">{{this.id}} {{this.title}}</option>
+				    {{/each}}
+				</select>
+
+				<div class="form-group">
+			      <div class="col-md-12 admin-center">
+			    	<br>  	
+					<br>
+			        <button class="btn btn-success" type="Submit">Submit</button>
+			      </div>
+			  	</div>
+			</div>
 
 		</form>
-		
-		
 		</div>
+		
+		
 	</div>
 	
 </div>
 
 <BR><BR>
 
+{{!-- 				<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div> --}}
+{{!-- 		      	<div class="col-sm-12"><label>Checkout / Checkin</label><input class="form-control" type="text" name="status" placeholder="Checkout / Checkin"></div> --}}
