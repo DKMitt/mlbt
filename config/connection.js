@@ -1,8 +1,9 @@
-// Setup mysql connection
+// Loads mySql Module
 var mysql = require("mysql");
 
 // mySQL Connection
 var connection = mysql.createConnection({
+	//destination port number
 	port: 3306,
 	host: "localhost",
 	user: "root",
@@ -16,7 +17,7 @@ connection.connect(function(err) {
 		console.error("error connecting: " + err.stack);
 		return;
 	}
-	console.log("connected as id: " + connection.threadId);
+	console.log("Connected as ID: " + connection.threadId);
 	console.log(" ");
 	console.log("----------------------------- ");
 });

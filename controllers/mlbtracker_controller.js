@@ -1,13 +1,13 @@
 //----------------Dependencies--------------
+// Loads express module 
 var express = require("express");
-
+// Sets routing 'mini-application' 
 var router = express.Router();
-
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
 // var user = mlbt.user;  // only redering full catalog from admin
 // var admin = mlbt.admin;
-
+// -----------------------------------------
 
 //=================
 //====USER=========

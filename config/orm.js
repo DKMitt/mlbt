@@ -1,11 +1,16 @@
 //Importing MySQL connection
 var connection = require("../config/connection.js");
 
+/*ORM:
+-Object-relational mapping
+-Virtual Object Database
+*/
 
-//ORM Object for SQL Statement functions
+//ORM Object for MySQL Statement functions
 var orm = {
     //Selecting all for SQL Statement
     all: function(tableInput, callback) {
+        // Select all from table and order by tite in ascending order.
         var queryString = "SELECT * FROM ?? ORDER BY title ASC";
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) {
@@ -14,7 +19,7 @@ var orm = {
             callback(result);
         });
     },
-    //Inserting a new item for SQL Statement
+    //CREATE: Inserting a new item for SQL Statement
     create: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
 
         var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
@@ -26,6 +31,7 @@ var orm = {
             callback(result);
         });
     },
+    // UPDATE
     update: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
 
         var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
@@ -37,9 +43,7 @@ var orm = {
             callback(result);
         });
     },
-
-
-      //DELETE
+    //DELETE
     delete: function (tableInput, data, callback) {
         var queryString = "DELETE FROM ?? WHERE ?";
 
