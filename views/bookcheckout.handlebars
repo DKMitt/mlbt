@@ -27,12 +27,11 @@
 		      	<div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
 		      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
 				<br>
-		{{!-- 		<select name="" id="">
-				    <option value="1">book title one</option>
-				    <option value="2">book title one</option>
-				    <option value="3">book title one</option>
-				    <option value="4">book title one</option>
-				</select> --}}
+				<select name="" id="">
+					{{#each books}}
+				    <option value="1">{{this.title}}</option>
+				    {{/each}}
+				</select>
 
 
 			</div><br>
@@ -41,7 +40,7 @@
 			<h2></h2><br><br>
 				<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
 				<div class="col-sm-12"><label>Return Date</label><input class="form-control" name="return_date" type="date"></div>
-				<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
+{{!-- 				<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div> --}}
 		      	<div class="col-sm-12"><label>Checkout / Checkin</label><input class="form-control" type="text" name="status" placeholder="Checkout / Checkin"></div>
 
 			<div class="form-group">

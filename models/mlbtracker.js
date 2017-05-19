@@ -43,10 +43,17 @@ var admin = {
     orm.userCheckout("users", "name", "email", "netID", "checkout_date", "return_date", "due_date", val1, val2, val3, val4, val5, val6, function(res) {
       callback(res);
     });
+  },
+  //=========== Joining user checkout to books=============
+  joiningTables: function(val1, val2, val3, val4, val5, callback) {
+    console.log();
+    orm.joinTables("books.title", "users.name", "users.netID", "users.checkout_date", "users.return_date", "books", "users", val1, val2, val3, val4, val5, function(res) {
+      callback(res);
+    });
   }
 
-
 };
+//SELECT books.title, users.name, users.netID, users.checkout_date, users.return_date FROM books INNER JOIN users ON books.id = users.id;
 
 //Exporting the database function for the controller
 module.exports = admin;

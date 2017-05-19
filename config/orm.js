@@ -76,9 +76,26 @@ var orm = {
             callback(result);
         });
     },
+    
+
+    //update
+
+    //checkoutlist
+    joinTables: function(bookTitle, userName, userNetId, userCheckout, userReturn, books, users, bookID, userID, val1, val2, val3, val4, val5, callback) {
+
+        var queryString = "SELECT ?? , ?? , ?? , ?? , ?? FROM ?? INNER JOIN ?? ON ?? = ??";
+
+        connection.query(queryString, [bookTitle, userName, userNetId, userCheckout, userReturn, books, users, bookID, userID], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    }
   
 };
 
+//SELECT books.title, users.name, users.netID, users.checkout_date, users.return_date FROM books INNER JOIN users ON books.id = users.id;
 
 //Exporting ORM object for model
 module.exports = orm;
