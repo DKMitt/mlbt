@@ -18,9 +18,9 @@ router.get("/", function(req, res) {
     var booksObject = {
       books: data
     };
-    console.log(booksObject);
     res.render("index", booksObject);
   }); 
+
 });
 
 //=================
@@ -77,8 +77,9 @@ router.post("/crud", function(req, res) {
 });
 
 
-//  Book Checkout --- checking out the book 
+// ======================== Book Checkout page===================================
 
+//render the book titles for the drop down
 router.get("/checkout", function(req, res) {
    mlbt.all(function(data) {
     var booksObject = {
@@ -89,9 +90,10 @@ router.get("/checkout", function(req, res) {
 
 });
 
+//render the page and posting user data to mySQL
 router.get("/checkout", function(req, res) {
+
    mlbt.allUser(function(data) {
-    console.log(data)
     var userObject = {
       users: data
     };
@@ -102,27 +104,42 @@ router.get("/checkout", function(req, res) {
 
 
 router.post("/checkout", function(req, res) {
+        console.log("getting the book id of the titles " + req.body.bookTitle);
   mlbt.createCheckout(
       req.body.name,
       req.body.email,
       req.body.netID,
       req.body.checkout_date,
-      req.body.return_date,
-      // req.body.due_date,
+      req.body.due_date,
       function() {
-        res.redirect("/admin");
+        res.redirect("/usercrud");
       }
   );
+});
+
+// UPDATE users and books tables  
+router.put("/checkout", function(req, res) {
+    mlbt.updateBooksTable(function(data) {
+      console.log("book updated with netID " + data)
+      var booksObject = {
+        books: data
+      };
+      console.log(booksObject);
+    res.redirect("/usercrud");
+  }); 
 });
 
 //  User CRUD 
 
 router.get("/usercrud", function(req, res) {
+   mlbt.allUser(function(data) {
+    var userObject = {
+      users: data
+    };
+    res.render("usercrud", userObject);
+  }); 
 
-    res.render("usercrud");
 });
-
-
 
 //=================
 

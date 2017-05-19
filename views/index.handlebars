@@ -47,16 +47,14 @@
                 {{!-- Loops data into table rows --}}
                 <tbody>
                   {{#each books}}
-                  {{#if this.status}}
                   <tr tabindex="1">
                     <td>{{this.title}}</td>
                     <td>{{this.author}}</td>
                     <td>{{this.edition}}</td>
                     <td>{{this.ISBN}}</td>
                     <td>{{this.publisher}}</td>
-                    <td>{{this.status}}</td>
+                    <td>{{this.available}}</td>
                   </tr> 
-                  {{/if}}
                   {{/each}}
                 </tbody>
               </table>

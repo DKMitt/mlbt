@@ -65,37 +65,49 @@ var orm = {
         });
     },
     //Inserting a new item for SQL Statement
-    userCheckout: function(tableInput, col1, col2, col3, col4, col5, col6, val1, val2, val3, val4, val5, val6, callback) {
+    userCheckout: function(tableInput, col1, col2, col3, col4, col5, val1, val2, val3, val4, val5, callback) {
 
-        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ??, ??) VALUES ( ?, ?, ?, ?, ?, ?)";
+        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ?)";
 
-        connection.query(queryString, [tableInput, col1, col2, col3, col4, col5, col6, val1, val2, val3, val4, val5, val6], function(err, result) {
+        connection.query(queryString, [tableInput, col1, col2, col3, col4, col5, val1, val2, val3, val4, val5], function(err, result) {
             if (err) {
                 throw err;
             }
             callback(result);
         });
     },
-    
 
     //update
+    updateBooksTable: function(tableInput, loanerNetID, val1, bookID, val2, callback) {
 
-    //checkoutlist
-    joinTables: function(bookTitle, userName, userNetId, userCheckout, userReturn, books, users, bookID, userID, val1, val2, val3, val4, val5, callback) {
+        var queryString = "UPDATE ?? SET ?? = ?? WHERE ?? = ?)";
 
-        var queryString = "SELECT ?? , ?? , ?? , ?? , ?? FROM ?? INNER JOIN ?? ON ?? = ??";
-
-        connection.query(queryString, [bookTitle, userName, userNetId, userCheckout, userReturn, books, users, bookID, userID], function(err, result) {
+        connection.query(queryString, [tableInput, loanerNetID, val1, bookID, val2], function(err, result) {
             if (err) {
                 throw err;
             }
             callback(result);
         });
     }
+    
+
+    //UPDATE books SET books.loanerNetID = "jlh974" WHERE books.id= 2; 
+    //checkoutlist
+    // joinTables: function(bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID, val1, val2, val3, val4, val5, callback) {
+
+    //     var queryString = "SELECT ?? , ?? , ?? , ?? , ?? FROM ?? INNER JOIN ?? ON ?? = ??";
+
+    //     connection.query(queryString, [bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID], function(err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //         callback(result);
+    //     });
+    // }
   
 };
 
-//SELECT books.title, users.name, users.netID, users.checkout_date, users.return_date FROM books INNER JOIN users ON books.id = users.id;
+//SELECT books.title, users.name, users.netID, users.checkout_date, users.due_date FROM books INNER JOIN users ON books.id = users.id;
 
 //Exporting ORM object for model
 module.exports = orm;
