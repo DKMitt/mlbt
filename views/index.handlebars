@@ -78,15 +78,15 @@
                 {{!-- Emails to Jeannine --}}
                 <form action="mailto:matsci@northwestern.edu?subject=Book(s) Request" method="post" enctype="text/plain">
                   {{!-- name input box --}}
-                  Name:  <input type="text" name="Name:" size="25"><br><br>
+                  Name:  <input type="text" name="Name:" size="25" placeholder="full name"><br><br>
                   {{!-- email input box --}}
                   <div class="row requiredRow">
                     <label for="email" id="email-ariaLabel">Email:   </label>
-                    <input id="email" name="email" type="email" class="required" size="20" title="This is a required field"/> 
+                    <input id="email" name="email" type="email" class="required" size="20" title="This is a required field" placeholder="email"/> 
                   </div> 
                   <br>
                   {{!-- request box --}}
-                  <b>Request:</b>  <input type="text" name="Book Request" size="40"><br><br>
+                  <b>Request:</b>  <input type="text" name="Book Request" size="40" placeholder="book request/comment"><br><br>
                   {{!-- submit button --}}
                   <div class="input-append"> 
                     <button class="btn btn-success">Submit</button>
