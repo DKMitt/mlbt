@@ -80,6 +80,16 @@ router.post("/crud", function(req, res) {
 //  Book Checkout --- checking out the book 
 
 router.get("/checkout", function(req, res) {
+   mlbt.all(function(data) {
+    var booksObject = {
+      books: data
+    };
+    res.render("bookcheckout", booksObject);
+  }); 
+
+});
+
+router.get("/checkout", function(req, res) {
    mlbt.allUser(function(data) {
     console.log(data)
     var userObject = {
@@ -98,7 +108,7 @@ router.post("/checkout", function(req, res) {
       req.body.netID,
       req.body.checkout_date,
       req.body.return_date,
-      req.body.due_date,
+      // req.body.due_date,
       function() {
         res.redirect("/admin");
       }

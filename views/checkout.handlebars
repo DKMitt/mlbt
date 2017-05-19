@@ -38,7 +38,7 @@
 					</thead>					    
 					<tbody class="">
 						{{#each books}}
-					 		{{#if this.status}}
+		{{!-- 			 		{{#if this.available}} --}}
 		 	
 			 		<tr tabindex="1" >
 				        <td>{{this.title}}</td>
@@ -46,7 +46,7 @@
 				        <td>{{this.edition}}</td>
 				        <td>{{this.ISBN}}</td>
 				        <td>{{this.publisher}}</td>
-				        <td>{{this.status}}</td>
+				        <td>{{this.available}}</td>
 				        <td>
 				        	<form action="/{{this.id}}?_method=DELETE" method="POST" class="button-size">
 					        	<input type="hidden" name="status" value="false">
@@ -65,7 +65,7 @@
 
 				       
 				      </tr>
-							{{/if}}
+							{{!-- {{/if}} --}}
 						{{/each}}
 					</tbody>
 			 	</table>

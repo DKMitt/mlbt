@@ -19,11 +19,11 @@ VALUES ('Properties of Materials', 'White, Mary Anne', '', '0195113314', 'Oxford
 INSERT INTO books (title, author, edition, ISBN, publisher) 
 VALUES ('Electrical Properties of Materials', 'Solymar, L. and Walsh, D.', '9th', '0198562721', 'Oxford University Press');
 
-INSERT INTO users (name, email, netID, admin) 
-VALUES ('Jeannine Hall', 'jeannine-hall@northwestern.edu', 'jlh974', true);
+INSERT INTO users (name, email, netID) 
+VALUES ('Jeannine Hall', 'jeannine-hall@northwestern.edu', 'jlh974');
 
-INSERT INTO users (name, email, netID, admin) 
-VALUES ('Gail Madete', 'g-madete@northwestern.edu', 'gam249', true);
+INSERT INTO users (name, email, netID) 
+VALUES ('Gail Madete', 'g-madete@northwestern.edu', 'gam249');
 
-INSERT INTO users (name, email, netID, admin) 
-VALUES ('George Jones', 'test@northwestern.edu', 'test123', false);
+INSERT INTO users (name, email, netID) 
+VALUES ('George Jones', 'test@northwestern.edu', 'test123');
