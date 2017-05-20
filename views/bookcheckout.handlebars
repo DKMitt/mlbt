@@ -31,17 +31,21 @@
                 </div>
                 <br>
 
+                <br>
                 <div class="container col-sm-6">
                     <h2></h2><br><br>
-                        <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
+                    <div class="col-sm-12"><label>Title</label>
+                    <select class="form-control" name="bookTitle" id="books">
+                          {{#each books}}
+                          <option name="title" value="{{this.id}}">{{this.title}}</option>
+                                {{/each}}
+                    </select>
+                    </div>
+                    <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
                         <div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
                     <h2></h2>
                     <BR><BR>
-                     <select name="bookTitle" id="books">
-                                {{#each books}}
-                                <option name="title" value="{{this.id}}">{{this.title}}</option>
-                                {{/each}}
-                    </select>
+                    
                     <br>
                 </div>
                 </div>
