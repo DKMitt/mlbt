@@ -81,7 +81,7 @@ File Structure Diagram
 
 ### Working Application Images (note: the application has been updated since these images have been posted):
 
-# ![MLBT](public/images/index.jpg)  <--- Client 
+# ![MLBT](public/images/index.jpg) Client 
 
 # ![MLBT](public/images/admin.jpg) Adminstrator
 
