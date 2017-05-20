@@ -12,10 +12,10 @@
     <div class="col-sm-5">
 			<div class="title">
         <h1><b>Mini Library Book Tracker</b></h1>
-  	        <p><i>by Team Book Slingers</i></p>
-  	    </div>
-      </div>
-  	</div>
+        <p><i>by Team Book Slingers</i></p>
+  	  </div>
+    </div>
+  </div>
 	
   <hr>
 	
@@ -68,23 +68,34 @@
     		{{!-- email books div --}}
         <div class="emailBooks">	 
     				<h2>Book Request</h2>
+
+              <hr>
+                
                 <p>If you would like to request a book, please fill out this form. Your request will be processed by Jeannine Hall, Northwestern University's premier book checker.
                 </p>
+                <br>
+
                 {{!-- Emails to Jeannine --}}
                 <form action="mailto:matsci@northwestern.edu?subject=Book(s) Request" method="post" enctype="text/plain">
                   {{!-- name input box --}}
-                  Name: <input type="text" name="Name:" size="30"><br><br>
+                  Name:  <input type="text" name="Name:" size="25" placeholder="full name"><br><br>
                   {{!-- email input box --}}
-                  Email: <input type="text" name="Email:" size="30"><br><br>
-                  {{!-- comment box --}}
-                  Comment:<br>
-                  <input type="text" name="Book Request" size="40"><br><br>
+                  <div class="row requiredRow">
+                    <label for="email" id="email-ariaLabel">Email:   </label>
+                    <input id="email" name="email" type="email" class="required" size="20" title="This is a required field" placeholder="email"/> 
+                  </div> 
+                  <br>
+                  {{!-- request box --}}
+                  <b>Request:</b>  <input type="text" name="Book Request" size="40" placeholder="book request/comment"><br><br>
                   {{!-- submit button --}}
                   <div class="input-append"> 
                     <button class="btn btn-success">Submit</button>
                   </div>
+                  <br>
+
                   {{!-- reset button --}}
                   <button class="btn btn-danger" type="reset" value="Reset">Reset</button>
+
                 </form>
     		</div>
     	</div>	
