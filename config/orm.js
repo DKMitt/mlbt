@@ -1,6 +1,6 @@
 //Importing MySQL connection
 var connection = require("../config/connection.js");
-
+var mysql = require("mysql");
 
 //ORM Object for SQL Statement functions
 var orm = {
@@ -8,6 +8,16 @@ var orm = {
     all: function(tableInput, callback) {
         var queryString = "SELECT * FROM ?? ORDER BY title ASC";
         connection.query(queryString, [tableInput], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
+    //findOne for SQL Statement
+    find: function(tableInput, data, callback) {
+        var queryString = "SELECT * FROM ?? WHERE ?";
+        connection.query(queryString, [tableInput, data], function(err, result) {
             if (err) {
                 throw err;
             }
@@ -26,18 +36,21 @@ var orm = {
             callback(result);
         });
     },
-    update: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
+    update: function(tableInput, bookid, bookinfo, callback) {
 
-        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
-
-        connection.query(queryString, [tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5], function(err, result) {
+        var queryString = "UPDATE ?? SET ? WHERE id=?";
+        
+        var inserts = [tableInput, bookinfo, parseInt(bookid.id)];
+        var sql = mysql.format(queryString, inserts);
+        console.log(sql);
+        console.log(bookinfo);
+        connection.query(sql, function(err, result) {
             if (err) {
                 throw err;
             }
             callback(result);
         });
     },
-
 
       //DELETE
     delete: function (tableInput, data, callback) {
@@ -50,7 +63,6 @@ var orm = {
 
           console.log(results); 
           callback(results);
-      
       
         });
     },
@@ -107,11 +119,8 @@ var orm = {
   
 };
 
+
 //SELECT books.title, users.name, users.netID, users.checkout_date, users.due_date FROM books INNER JOIN users ON books.id = users.id;
 
 //Exporting ORM object for model
 module.exports = orm;
-
-
-
-
