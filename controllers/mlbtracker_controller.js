@@ -39,15 +39,40 @@ router.get("/admin", function(req, res) {
 
 
 router.put("/:id", function(req, res) {
-  var data = {id: req.params.id}
-  mlbt.updateBook(data, function() {
-    res.redirect("/admin");
+  var data = {id: req.params.id};
+   console.log(req.params.id);
+   // lookup data
+   // display edit form
+   // fill in fields with data
+   mlbt.getbook(data, function(bookdata) {
+    res.render("bookedit", bookdata[0]);
   });
 });
 
 
+router.post("/edit", function(req, res) {
+  var data = {id: req.body.id};
+  console.log("--------------------------")
+   console.log(req.body.id);
+   console.log(req.body.bTitle);
+   console.log(req.body.bAuthor);
+   console.log(req.body.bISBN);
+    mlbt.updateBook(data,
+        req.body.bTitle,
+        req.body.bAuthor,
+        req.body.bEdition,
+        req.body.bISBN,
+        req.body.bpublisher,
+        function() {
+          res.redirect("/admin");
+        }
+      );
+});
+
+
+
 router.delete("/:id", function(req, res) {
-  var data = {id: req.params.id}
+  var data = {id: req.params.id};
   console.log(req.params.id);
   mlbt.delete(data, function() {
     res.redirect("/admin");
