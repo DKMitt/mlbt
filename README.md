@@ -1,7 +1,7 @@
-# Mini Library Book Tracker :blue_book:
+# Mini Library Book Tracker (MLBT) :blue_book:
 
 
-### Description: A full-stack library application that tracks the books at the Northwestern University department of Material Science and Engineering. Facilitates access for students and faculty.
+### Description: Full-stack library application that efficiently tracks the books at the Northwestern University department of Material Science and Engineering. Facilitates access for students and faculty.
 
 
 ```
@@ -71,19 +71,20 @@ File Structure Diagram
 
 ### How to setup and use the application :computer::
 
-1. Open your command-line user interface
-2. Clone MLBT repo to your computer in your desired file path
+1. Open your command-line user interface (CLI)
+2. Clone the <em>mlbt</em> repository to your computer in your desired file path
 3. Configure the <code>connection.js</code> file to your MySQL Workbench settings
-4. Type <code>node server.js</code> to connect to the server
-5. For client-side: Enter <code>localhost:[insert port number]</code> in the URL bar to load index page. For administrator: add <code>/admin</code> or <code>/crud</code> paths to the local host URL to load administrator-side pages.
+4. Type <code>node server.js</code> in CLI to connect to the server
+5. For client-side view: Enter <code>localhost:[insert port number]</code> in the URL bar to load index page. For administrator view: add <code>/admin</code> or <code>/crud</code> paths to the local host URL to load administrator-side pages.
 
+- - - 
 
 ### Working Application Images (note: the application has been updated since these images have been posted):
 
-# ![MLBT](public/images/index.jpg)
+# ![MLBT](public/images/index.jpg)  <--- Client 
 
-# ![MLBT](public/images/admin.jpg)
+# ![MLBT](public/images/admin.jpg)  <-- Adminstrator
 
-# ![MLBT](public/images/addbook.jpg)
+# ![MLBT](public/images/addbook.jpg) <-- Administrator
 
 
