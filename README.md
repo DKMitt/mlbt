@@ -83,8 +83,8 @@ File Structure Diagram
 
 # ![MLBT](public/images/index.jpg)  <--- Client 
 
-# ![MLBT](public/images/admin.jpg)  <-- Adminstrator
+# ![MLBT](public/images/admin.jpg) <-- Adminstrator
 
-# ![MLBT](public/images/addbook.jpg) <-- Administrator
+# ![MLBT](public/images/addbook.jpg)<-- Administrator
 
 
