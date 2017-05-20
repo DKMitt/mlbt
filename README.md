@@ -72,10 +72,13 @@ File Structure Diagram
 ### How to use the application:
 
 1. Open your command-line user interface
-2. Clone MLBT repo to your computer 
+2. Clone MLBT repo to your computer in your desired file path
 3. Configure the <code>connection.js</code> file to your MySQL Workbench settings
 4. Type <code>node server.js</code> to connect to the server
+5. For client-side: Enter <code>localhost:[insert port number]</code> in the URL bar to load index page. For administrator: add /admin or /crud paths to the local host URL to load administrator-side pages.
 
+
+### Application Images (note: the application has been updated since these images have been posted):
 
 # ![MLBT](public/images/index.jpg)
 
