@@ -69,7 +69,7 @@ File Structure Diagram
 
 - - - 
 
-### How to setup and use the application :computer::
+### How to setup and use the MLBT :computer::
 
 1. Open your command-line user interface (CLI)
 2. Clone the <em>mlbt</em> repository to your computer in your desired file path
@@ -83,8 +83,8 @@ File Structure Diagram
 
 # ![MLBT](public/images/index.jpg)  <--- Client 
 
-# ![MLBT](public/images/admin.jpg) <-- Adminstrator
+# ![MLBT](public/images/admin.jpg) Adminstrator
 
-# ![MLBT](public/images/addbook.jpg)<-- Administrator
+# ![MLBT](public/images/addbook.jpg) Administrator
 
 
