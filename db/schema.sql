@@ -19,8 +19,8 @@ CREATE TABLE users (
     name VARCHAR (255) NOT NULL,
     email VARCHAR (255) NOT NULL,
     netID VARCHAR (50) NOT NULL,
-    checkout_date DATE,
-    due_date DATE,
+    checkout_date VARCHAR,
+    due_date VARCHAR,
     PRIMARY KEY (id)
     );
 
