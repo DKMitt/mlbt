@@ -1,63 +1,71 @@
 <div class="container">
-	
-	<div class="row">
-	    <div class="col-sm-7">
-			<br>
-			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
-	    </div>
-		<div class="col-sm-5 title">
-			<h1><b>Mini Library Book Tracker</b></h1>
-	        <p><i>by Team Book Slingers</i></p>
-	        <br>
-	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
-	    </div>
-	
-		<hr>
-	</div>
+    
+    <div class="row">
+        <div class="col-sm-7">
+            <br>
+            <img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
+        </div>
+            <div class="col-sm-5 title">
+                <h1><b>Mini Library Book Tracker</b></h1>
+                <p><i>by Team Book Slingers</i></p>
+                <br>
+                <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
+            </div>
+        </div>
+    
+        <hr>
+    </div>
 
-  <div class="row">
-        <div class="container">
-            <form class="form-horizontal">
+    <div class="row">
+    
+        <form class="form-horizontal" action="/checkout" method="post" role="form">
+            <div class="container">
                 <div class="container col-sm-6"><br>
-                    <h2>Checkout Book</h2>
+                <h2>Checkout Book</h2>
                     <br>
-                    <div class="col-sm-12 name"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
-                      <div class="col-sm-12 email"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
-                      <div class="col-sm-12 netid"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
+                    <div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
+                    <div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
+                    <div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
                     <br>
 
-
-                </div><br>
+                </div>
+                <br>
 
                 <div class="container col-sm-6">
                     <h2></h2><br><br>
-                        <div class="col-sm-12 checkout"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
-                        <div class="col-sm-12 due"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
-                    <br>
-                    <select name="bookTitle" id="books">
-                        {{#each books}}
-                        <option value="">{{this.id}}{{this.title}}</option>
-                        {{/each}}
+                        <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
+                        <div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
+                    <h2></h2>
+                    <BR><BR>
+                     <select name="bookTitle" id="books">
+                                {{#each books}}
+                                <option value="">{{this.id}}{{this.title}}</option>
+                                {{/each}}
                     </select>
-
-                    <div class="form-group">
-                      <div class="col-md-12 admin-center">
-                        <br>
-                        <br>
-                        <button class="btn btn-success" id="form-submit"  type="Submit">Submit</button>
-                      </div>
-                      </div>
+                    <br>
                 </div>
-            </form>
-        </div>
+                </div>
+                  <div class="form-group">
+                  <div class="col-md-12 admin-center">
+                    <br>    
+                    <br>
+                    <button class="btn btn-success" type="Submit">Submit</button>
+                    </div>
+                </div>
 
+            </div>     
+
+        </form>
+        
+       
 
     </div>
-
+    
 </div>
 
 <BR><BR>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<BR><BR>
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
      $("#form-submit").on("click", function(event){
@@ -67,17 +75,17 @@
          var data = {
              name: $(".name").val().trim(),
              email: $(".email").val().trim(),
-             netid: $(".netid").val().trim(),
-             checkout: $(".checkout").val().trim(),
-             due: $(".due").val().trim(),
-             books: $("#books:selected").val()
+             netid: $(".netID").val().trim(),
+             checkout: $(".checkout_date").val().trim(),
+             due: $(".due_date").val().trim(),
+             books: $("#books:selected").val().trim()
          }
 
          console.log(data);
 
          $.ajax({
         url: currentURL + '/checkout',
-        type: 'POST',
+        type: 'post',
         success: function(result) {
             console.log('THE PUT WAS SUCCESSFUL');
             }
@@ -85,7 +93,7 @@
 
            $.ajax({
         url: currentURL + '/checkout/:book',
-        type: 'PUT',
+        type: 'put',
         success: function(result) {
             console.log('THE PUT WAS SUCCESSFUL');
             }
@@ -95,3 +103,5 @@
 
 
 </script>
+ --}}
+

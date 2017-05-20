@@ -37,6 +37,9 @@ var admin = {
       publisher: val5
     };
     orm.update("books", bookid, bookinfo, function(res) {
+  // updateBook: function(val1, val2, val3, val4, val5, callback) {
+  //   console.log(val1, val2, val3, val4, val5);
+  //   orm.update("books", "title", val1, "author", val2, "edition", val3, "ISBN", val4, "publisher", val5, "id", function(res) {
       callback(res);
     });
   },
@@ -57,20 +60,20 @@ var admin = {
       callback(res);
     });
   },
-  booksTableUpdate: function(val1, val2, callback) {
-    console.log("getting the value for the book" + val1 + val2);
-    orm.updateBooksTable("books", "books.loanerNetID", val1, "books.id", val2, function(res) {
-      callback(res);
-    });
-  },
-  //tableInput, loanerNetID, netID, bookID, userBookChoice
-  //=========== Joining user checkout to books=============
-  // joiningTables: function(val1, val2, val3, val4, val5, callback) {
-  //   console.log();
-  //   orm.joinTables("books.title", "users.name", "users.netID", "users.checkout_date", "users.due_date", "books", "users", val1, val2, val3, val4, val5, function(res) {
+  // booksTableUpdate: function(val1, val2, callback) {
+  //   console.log("getting the value for the book" + val1 + val2);
+  //   orm.updateBooksTable("books", "books.loanerNetID", val1, "books.id", val2, function(res) {
   //     callback(res);
   //   });
-  // }
+  // },
+  //tableInput, loanerNetID, netID, bookID, userBookChoice
+  //=========== Joining user checkout to books=============
+  joiningTables: function(val1, val2, val3, val4, val5, callback) {
+    console.log();
+    orm.joinTables("books.title", "users.name", "users.netID", "users.checkout_date", "users.due_date", "books", "users", "books.id", "users.id", val1, val2, val3, val4, val5, function(res) {
+      callback(res);
+    });
+  }
 
 };
 //SELECT books.title, users.name, users.netID, users.checkout_date, users.due_date FROM books INNER JOIN users ON books.id = users.id;
