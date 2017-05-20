@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="/javascript.js">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 
-            // Email validation
+            // Email validation for index form
             $('form input[name="email"]').blur(function () {
                 
+                // following characters required for valid email 
                 var email = $(this).val();
                 var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
                 if (re.test(email)) {
