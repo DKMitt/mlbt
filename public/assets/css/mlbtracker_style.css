@@ -12,11 +12,12 @@
   float:left;
   align-content:center;
   width:100%; 
-  height: 600px;
+  height: 300px;
   width: 800px;
   overflow: auto;
   text-align:center; 
   font-family: 'Oxygen', sans-serif; 
+  overflow: scroll;
   }
 }
 
@@ -39,6 +40,11 @@
   font-family: 'Oxygen', sans-serif;
 
 }
+
+.requiredRow {
+  margin-left: 0px;
+}
+
 
 .footer{
 /*     align-content:center;
@@ -70,4 +76,8 @@
 img {
   width: 80%;
   height: auto;
+}
+
+.btn-size {
+  width: 26px;
 }
