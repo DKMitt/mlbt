@@ -60,12 +60,12 @@ var admin = {
       callback(res);
     });
   },
-  // booksTableUpdate: function(val1, val2, callback) {
-  //   console.log("getting the value for the book" + val1 + val2);
-  //   orm.updateBooksTable("books", "books.loanerNetID", val1, "books.id", val2, function(res) {
-  //     callback(res);
-  //   });
-  // },
+
+  booksTableUpdate: function(netIDVal, bookID, callback) {
+    orm.updateBooksTable("books", "loanerNetID", netIDVal, bookID, function(res) {
+      callback(res);
+    });
+  },
   //tableInput, loanerNetID, netID, bookID, userBookChoice
   //=========== Joining user checkout to books=============
   joiningTables: function(val1, val2, val3, val4, val5, callback) {
