@@ -8,15 +8,22 @@
 }
 
 
+.table-hover{
+
+  text-align: left;
+
+}
+
 .booksTable {
   float:left;
   align-content:center;
   width:100%; 
-  height: 600px;
+  height: 550px;
   width: 800px;
   overflow: auto;
   text-align:center; 
   font-family: 'Oxygen', sans-serif; 
+  overflow: scroll;
   }
 }
 
