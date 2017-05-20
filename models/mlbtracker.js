@@ -44,8 +44,8 @@ var admin = {
     });
   },
   booksTableUpdate: function(val1, val2, callback) {
-    console.log("getting the value for the book" + val);
-    orm.updateBooksTable("books", "books.loanerNetID", "books.id", val1, val2, function(res) {
+    console.log("getting the value for the book" + val1 + val2);
+    orm.updateBooksTable("books", "books.loanerNetID", val1, "books.id", val2, function(res) {
       callback(res);
     });
   },

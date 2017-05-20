@@ -80,7 +80,7 @@ var orm = {
     //update
     updateBooksTable: function(tableInput, loanerNetID, val1, bookID, val2, callback) {
 
-        var queryString = "UPDATE ?? SET ?? = ?? WHERE ?? = ?)";
+        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?)";
 
         connection.query(queryString, [tableInput, loanerNetID, val1, bookID, val2], function(err, result) {
             if (err) {

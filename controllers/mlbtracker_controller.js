@@ -117,16 +117,16 @@ router.post("/checkout", function(req, res) {
   );
 });
 
+
+
 // UPDATE users and books tables  
-router.put("/checkout", function(req, res) {
-    mlbt.updateBooksTable(function(data) {
-      console.log("book updated with netID " + data)
-      var booksObject = {
-        books: data
-      };
-      console.log(booksObject);
-    res.redirect("/usercrud");
-  }); 
+router.put("/:id", function(req, res) {
+  console.log(req.body.loanerNetID);
+    mlbt.booksTableUpdate(
+    req.body.loanerNetID, 
+    function() {
+      res.redirect("/usercrud")
+    })
 });
 
 //  User CRUD 

@@ -18,38 +18,38 @@
 	<div class="row">
 		<div class="container">
 		<form class="form-horizontal" action="/checkout" method="post" role="form">
-		<form class="form-horizontal" action="/checkout/?_method=PUT" method="post" role="form">
-			<div class="container col-sm-6"><br>
-				<h2>Checkout Book</h2>
-				<br>
-				<div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
-		      	<div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
-		      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
-				<br>
-
-
-			</div><br>
-
-			<div class="container col-sm-6">
-				<h2></h2><br><br>
-					<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
-					<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
-				<br>
-				<select name="bookTitle" id="books">
-					{{#each books}}
-				    <option value="1">{{this.id}} {{this.title}}</option>
-				    {{/each}}
-				</select>
-
-				<div class="form-group">
-			      <div class="col-md-12 admin-center">
-			    	<br>  	
+			<form class="form-horizontal" action="/?_method=PUT" method="post" role="form">
+				<div class="container col-sm-6"><br>
+					<h2>Checkout Book</h2>
 					<br>
-			        <button class="btn btn-success" type="Submit">Submit</button>
-			      </div>
-			  	</div>
-			</div>
+					<div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
+			      	<div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
+			      	<div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
+					<br>
 
+
+				</div><br>
+
+				<div class="container col-sm-6">
+					<h2></h2><br><br>
+						<div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
+						<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
+					<br>
+					<select name="bookTitle" id="books">
+						{{#each books}}
+					    <option value="">{{this.id}}{{this.title}}</option>
+					    {{/each}}
+					</select>
+
+					<div class="form-group">
+				      <div class="col-md-12 admin-center">
+				    	<br>  	
+						<br> 
+				        <button class="btn btn-success" id="form-submit"  type="Submit">Submit</button>
+				      </div>
+				  	</div>
+				</div>
+			</form>
 		</form>
 		</div>
 		
@@ -59,6 +59,30 @@
 </div>
 
 <BR><BR>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	 $("#form-submit").click(function(){
+	 	event.preventDefault();
+	 	$.ajax({
+	    url:'/checkout',
+	    type: 'router.post',
+	    success: function(result) {
+	        console.log('THE PUT WAS SUCCESSFUL');
+	        }
+		});
+       	$.ajax({
+	    url:'/?_method=PUT',
+	    type: 'router.put',
+	    success: function(result) {
+	        console.log('THE PUT WAS SUCCESSFUL');
+	        }
+		});       
+    });
 
+
+
+
+
+</script>
 {{!-- 				<div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div> --}}
 {{!-- 		      	<div class="col-sm-12"><label>Checkout / Checkin</label><input class="form-control" type="text" name="status" placeholder="Checkout / Checkin"></div> --}}
