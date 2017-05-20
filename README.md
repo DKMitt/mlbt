@@ -22,7 +22,6 @@ File Structure Diagram
 ├── models
 │   └── mlbtracker.js
 │ 
-├── node_modules
 │ 
 ├── package.json
 │
@@ -30,20 +29,31 @@ File Structure Diagram
 │   ├── assets
 │   │   ├── css
 │   │   │   └── mlbtracker_style.css
-│   │   └── img
-│   │       └── logo.jpg
-│   └── test.html
+│   │   └── images
+│   │       |
+|   |       ├── addbook.jpg
+|   |       |
+|   |       ├── admin.jpg
+|   |       |
+|   |       ├── index.jpg
+|   |       |
+|   |       └── logo.jpg
+│   |
+|   |
+|   └── test.html
 │
 ├── server.js
 │
 └── views
-    └── layouts
-          ├── bookcheckout.handlebars
+    |   └──layouts
+    |         └── main.handlebars
+    |
+    └── bookcheckout.handlebars
           ├── bookcrud.handlebars
           ├── checkout.handlebars
           ├── index.handlebars
-          └── usercrud.handlebars
-      
+          └── usercrud.handlebars           
+               
 ```
 
 - - -
