@@ -120,7 +120,7 @@ router.post("/checkout", function(req, res) {
 
 
 // UPDATE users and books tables  
-router.put("/:id", function(req, res) {
+router.put("/checkout", function(req, res) {
   console.log(req.body.loanerNetID);
     mlbt.booksTableUpdate(
     req.body.loanerNetID, 
