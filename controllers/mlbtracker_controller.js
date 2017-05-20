@@ -38,9 +38,15 @@ router.get("/admin", function(req, res) {
 });
 
 
-router.put("/:id", function(req, res) {
-  var data = {id: req.params.id}
-  mlbt.updateBook(data, function() {
+router.put("/admin/:id", function(req, res) {
+console.log("is it even here");
+  mlbt.updateBook(
+    req.params.title,
+    req.params.author,
+    req.params.edition,
+    req.params.ISBN,
+    req.params.publisher,
+    function() {
     res.redirect("/admin");
   });
 });
@@ -120,14 +126,14 @@ router.post("/checkout", function(req, res) {
 
 
 // UPDATE users and books tables  
-router.put("/checkout", function(req, res) {
-  console.log(req.body.loanerNetID);
-    mlbt.booksTableUpdate(
-    req.body.loanerNetID, 
-    function() {
-      res.redirect("/usercrud")
-    })
-});
+// router.put("/checkout", function(req, res) {
+//   console.log(req.body.loanerNetID);
+//     mlbt.booksTableUpdate(
+//     req.body.loanerNetID, 
+//     function() {
+//       res.redirect("/usercrud")
+//     })
+// });
 
 //  User CRUD 
 
@@ -137,6 +143,18 @@ router.get("/usercrud", function(req, res) {
       users: data
     };
     res.render("usercrud", userObject);
+  }); 
+
+});
+
+router.get("/usercrud", function(req, res) {
+   mlbt.joiningTables(function(data) {
+    console.log(data);
+    var checkoutObject = {
+      checkout: data
+    };
+    res.render("usercrud", checkoutObject);
+    console.log(checkoutObject);
   }); 
 
 });
