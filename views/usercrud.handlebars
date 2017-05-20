@@ -36,18 +36,14 @@
 					     </tr>
 					</thead>					    
 					<tbody class="">
-						{{#each checkout}}
-					 		
-		 	
-			 		<tr tabindex="1">
-				        <td>{{this.user_id}}</td>
-				        <td>{{this.book_id}}</td>
-				        <td>{{this.status}}</td>
-				        <td>{{this.checkout_date}}</td>
-				        <td>{{this.due_date}}</td>
-				        <td>{{this.return_date}}</td>
-				       
-				      </tr>
+						{{#each users}}
+					 		<tr tabindex="1">
+					 			<td></td>
+						        <td>{{this.name}}</td>
+						        <td>{{this.netID}}</td>
+						        <td>{{this.checkout_date}}</td>
+						        <td>{{this.due_date}}</td>						       
+						      </tr>
 						{{/each}}
 					</tbody>
 			 	</table>

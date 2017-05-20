@@ -26,11 +26,11 @@ var orm = {
             callback(result);
         });
     },
-    update: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
+    update: function(tableInput, colname1, val1,  colname2, val2, colname3, val3, colname4, val4, colname5, bookID, callback) {
+        console.log(queryString);
+        var queryString = "UPDATE ?? SET ?? = ?, ?? = ?, ?? = ?, ?? = ?, ?? = ? WHERE id = ?";
 
-        var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
-
-        connection.query(queryString, [tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5], function(err, result) {
+        connection.query(queryString, [tableInput, colname1, val1,  colname2, val2, colname3, val3, colname4, val4, colname5, bookID], function(err, result) {
             if (err) {
                 throw err;
             }
@@ -78,32 +78,32 @@ var orm = {
     },
 
     //update
-    updateBooksTable: function(tableInput, loanerNetID, val1, bookID, val2, callback) {
+    // updateBooksTable: function(tableInput, loanerNetID, val1, bookID, val2, callback) {
 
-        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?)";
+    //     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
 
-        connection.query(queryString, [tableInput, loanerNetID, val1, bookID, val2], function(err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    }
-    
-
-    //UPDATE books SET books.loanerNetID = "jlh974" WHERE books.id= 2; 
-    //checkoutlist
-    // joinTables: function(bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID, val1, val2, val3, val4, val5, callback) {
-
-    //     var queryString = "SELECT ?? , ?? , ?? , ?? , ?? FROM ?? INNER JOIN ?? ON ?? = ??";
-
-    //     connection.query(queryString, [bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID], function(err, result) {
+    //     connection.query(queryString, [tableInput, loanerNetID, val1, bookID, val2], function(err, result) {
     //         if (err) {
     //             throw err;
     //         }
     //         callback(result);
     //     });
     // }
+    
+
+    //UPDATE books SET books.loanerNetID = "jlh974" WHERE books.id= 2; 
+    //checkoutlist
+    joinTables: function(bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID, val1, val2, val3, val4, val5, callback) {
+
+        var queryString = "SELECT ?? , ?? , ?? , ?? , ?? FROM ?? INNER JOIN ?? ON ?? = ??";
+
+        connection.query(queryString, [bookTitle, userName, userNetId, userCheckout, userDue, books, users, bookID, userID], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    }
   
 };
 
