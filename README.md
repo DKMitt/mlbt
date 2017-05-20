@@ -67,6 +67,10 @@ File Structure Diagram
 4. Type <code>node server.js</code> to connect to the server
 
 
-# ![MLBT](public/assets/images/etba.jpg)
+# ![MLBT](public/assets/images/index.jpg)
+
+# ![MLBT](public/assets/images/admin.jpg)
+
+# ![MLBT](public/assets/images/addbook.jpg)
 
 
