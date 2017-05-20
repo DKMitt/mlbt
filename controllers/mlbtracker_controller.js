@@ -139,7 +139,7 @@ router.get("/checkout", function(req, res) {
 
 
 router.post("/checkout", function(req, res) {
-        console.log("getting the book id of the titles " + req.body.bookTitle);
+        console.log("getting the book id of the titles " + req.body.loanerNetID);
   mlbt.createCheckout(
       req.body.name,
       req.body.email,
@@ -153,16 +153,15 @@ router.post("/checkout", function(req, res) {
 });
 
 
-
-// UPDATE users and books tables  
-// router.put("/checkout", function(req, res) {
-//   console.log(req.body.loanerNetID);
-//     mlbt.booksTableUpdate(
-//     req.body.loanerNetID, 
-//     function() {
-//       res.redirect("/usercrud")
-//     })
-// });
+//UPDATE users and books tables  
+router.put("/:id", function(req, res) {
+  var data = {id: req.params.id};
+   console.log(req.params.id);
+    mlbt.booksTableUpdate(data,
+    function() {
+      res.redirect("/usercrud")
+    })
+});
 
 //  User CRUD 
 
