@@ -84,4 +84,3 @@ module.exports = admin;
 //   admin: admin,
 //   user: user
 // }
-

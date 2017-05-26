@@ -2,6 +2,7 @@
 var connection = require("../config/connection.js");
 var mysql = require("mysql");
 
+
 //ORM Object for SQL Statement functions
 var orm = {
     //Selecting all for SQL Statement
@@ -28,7 +29,6 @@ var orm = {
     create: function(tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5, callback) {
 
         var queryString = "INSERT INTO ?? ( ??, ??, ??, ??, ?? ) VALUES ( ?, ?, ?, ?, ? )";
-
         connection.query(queryString, [tableInput, colname1, colname2, colname3, colname4, colname5, val1, val2, val3, val4, val5], function(err, result) {
             if (err) {
                 throw err;
@@ -62,10 +62,8 @@ var orm = {
           if(err) {
             throw err;
           }
-
           console.log(results); 
           callback(results);
-      
         });
     },
     //======================== USER
@@ -125,3 +123,4 @@ var orm = {
 
 //Exporting ORM object for model
 module.exports = orm;
+

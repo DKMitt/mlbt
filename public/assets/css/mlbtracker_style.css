@@ -1,5 +1,6 @@
 @media screen and (min-width:400px) {
 
+<<<<<<< HEAD
 
 .title {
 
@@ -14,10 +15,13 @@
 
 }
 
+=======
+>>>>>>> Darryl
 .booksTable {
   float:left;
   align-content:center;
   width:100%; 
+<<<<<<< HEAD
   height: 550px;
   width: 800px;
   overflow: auto;
@@ -25,6 +29,24 @@
   font-family: 'Oxygen', sans-serif; 
   overflow: scroll;
   }
+=======
+  height: 600px;
+  width: 800px;
+  overflow: auto;
+  text-align:center;
+
+}
+
+hr { 
+    /* display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+    border-color: black; */
+>>>>>>> Darryl
 }
 
 .table-nonfluid {
@@ -43,6 +65,7 @@
   height:500px;
   margin-left: 100px;
   width:300px;
+<<<<<<< HEAD
   font-family: 'Oxygen', sans-serif;
 
 }
@@ -52,6 +75,11 @@
 }
 
 
+=======
+
+}
+
+>>>>>>> Darryl
 .footer{
 /*     align-content:center;
     width:100%;
@@ -67,16 +95,25 @@
     background-color:red;
     border:2px solid black; 
     margin-top:10px; */
+<<<<<<< HEAD
     margin-left: 600px;
+=======
+    /*margin-left: 600px;*/
+>>>>>>> Darryl
   
 }
 
 .right {
 	text-align: right;
+<<<<<<< HEAD
+=======
+
+>>>>>>> Darryl
 }
 
 .admin-center {
 	text-align: center;
+<<<<<<< HEAD
 }
 
 img {
@@ -86,4 +123,6 @@ img {
 
 .btn-size {
   width: 26px;
+=======
+>>>>>>> Darryl
 }

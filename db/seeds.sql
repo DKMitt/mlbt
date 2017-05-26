@@ -19,6 +19,7 @@ VALUES ('Properties of Materials', 'White, Mary Anne', '', '0195113314', 'Oxford
 INSERT INTO books (title, author, edition, ISBN, publisher) 
 VALUES ('Electrical Properties of Materials', 'Solymar, L. and Walsh, D.', '9th', '0198562721', 'Oxford University Press');
 
+
 INSERT INTO users (name, email, netID) 
 VALUES ('Jeannine Hall', 'jeannine-hall@northwestern.edu', 'jlh974');
 

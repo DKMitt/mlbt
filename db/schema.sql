@@ -35,6 +35,7 @@ CREATE TABLE users (
 --     FOREIGN KEY (book_id) REFERENCES books(id)
 --     );
 
+
 /*CREATE TABLE requests (
     id INTEGER (11) AUTO_INCREMENT NOT NULL,
     user_id INTEGER (11)

@@ -5,8 +5,6 @@ var router = express.Router();
 
 //Importing the model to use database function
 var mlbt = require("../models/mlbtracker.js");
-// var user = mlbt.user;  // only redering full catalog from admin
-// var admin = mlbt.admin;
 
 
 //=================
@@ -23,6 +21,7 @@ router.get("/", function(req, res) {
 
 });
 
+
 //=================
 //====ADMIN======== 
 //=================
@@ -34,7 +33,6 @@ router.get("/admin", function(req, res) {
     };
     res.render("checkout", booksObject);
   }); 
-
 });
 
 
@@ -98,8 +96,15 @@ router.get("/crud", function(req, res) {
 
 
 router.post("/crud", function(req, res) {
-
   mlbt.createNewBook(
+  console.log("/crud post: " + req);
+  console.log("/crud post: " + req.body.bTitle);
+  console.log("/crud post: " + req.body.bAuthor);
+  console.log("/crud post: " + req.body.bEdition);
+  console.log("/crud post: " + req.body.bISBN);
+  console.log("/crud post: " + req.body.bpublisher);
+  // console.log("/crud post: " + req.body);
+  admin.createNewBook(
     req.body.bTitle,
     req.body.bAuthor,
     req.body.bEdition,
