@@ -49,10 +49,10 @@
                   <div class="col-md-12 admin-center">
                     <br>    
                     <br>
-                    <form action="/{{this.id}}?_method=put" method="post" class="pull-left">
+{{!--                     <form action="/{{this.id}}?_method=put" method="post" class="pull-left">
                     <input type="hidden" name="status" value="false">
-                    <input type="hidden" name="id" value="{{this.id}}">
-                    <button class="btn btn-success" type="Submit">Submit</button>
+                    <input type="hidden" name="id" value="{{this.id}}"> --}}
+                    <button class="btn btn-success" id="form-submit" type="Submit">Submit</button>
                     </form>
                     </div>
                 </div>
@@ -65,9 +65,7 @@
     
 </div>
 
-<BR><BR>
-<BR><BR>
-{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
      $("#form-submit").on("click", function(event){
@@ -86,24 +84,20 @@
          console.log(data);
 
          $.ajax({
-        url: currentURL + '/checkout',
-        type: 'post',
-        success: function(result) {
-            console.log('THE PUT WAS SUCCESSFUL');
+            url: currentURL + '/checkout',
+            type: 'POST',
+            success: function(result) {
+              console.log('THE PUT WAS SUCCESSFUL');
             }
         });
 
-           $.ajax({
-        url: currentURL + '/checkout/:book',
-        type: 'put',
-        success: function(result) {
-            console.log('THE PUT WAS SUCCESSFUL');
-            }
+           // $.ajax({
+           //    url: currentURL + '/checkout/:book',
+           //    type: 'PUT',
+           //    success: function(result) {
+           //        console.log('THE PUT WAS SUCCESSFUL');
+           //    }
         });
     });
-
-
-
-</script>
- --}}
-
+<BR><BR>
+<BR><BR>
