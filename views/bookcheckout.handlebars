@@ -30,18 +30,21 @@
 
                 </div>
                 <br>
-
+                <br>
                 <div class="container col-sm-6">
                     <h2></h2><br><br>
-                        <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
+                    <div class="col-sm-12"><label>Title</label>
+                    <select class="form-control" name="bookTitle" id="books">
+                          {{#each books}}
+                          <option name="title" value="{{this.id}}">{{this.title}}</option>
+                                {{/each}}
+                    </select>
+                    </div>
+                    <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
                         <div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
                     <h2></h2>
                     <BR><BR>
-                     <select name="bookTitle" id="books">
-                                {{#each books}}
-                                <option name="title" value="{{this.id}}">{{this.title}}</option>
-                                {{/each}}
-                    </select>
+                    
                     <br>
                 </div>
                 </div>
@@ -65,7 +68,10 @@
     
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<BR><BR>
+<BR><BR>
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+>>>>>>> 11e6a19ee0de3fdcb8bd32ec935b38b89477a7b6
 <script type="text/javascript">
 
      $("#form-submit").on("click", function(event){
@@ -84,6 +90,7 @@
          console.log(data);
 
          $.ajax({
+<<<<<<< HEAD
             url: currentURL + '/checkout',
             type: 'POST',
             success: function(result) {
@@ -101,3 +108,26 @@
     });
 <BR><BR>
 <BR><BR>
+=======
+        url: currentURL + '/checkout',
+        type: 'post',
+        success: function(result) {
+            console.log('THE PUT WAS SUCCESSFUL');
+            }
+        });
+
+           $.ajax({
+        url: currentURL + '/checkout/:book',
+        type: 'put',
+        success: function(result) {
+            console.log('THE PUT WAS SUCCESSFUL');
+            }
+        });
+    });
+
+
+
+</script>
+ --}}
+
+

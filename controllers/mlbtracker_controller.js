@@ -155,7 +155,6 @@ router.post("/checkout", function(req, res) {
 
 //UPDATE users and books tables  
 router.put("/:id", function(req, res) {
-  
   var data = {id: req.params.id};
    console.log(req.params.id);
     mlbt.booksTableUpdate(data,
