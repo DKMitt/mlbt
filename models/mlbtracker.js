@@ -49,7 +49,7 @@ var admin = {
   },
   //============Admin checking out books for users ===========
   allUser: function(callback) {
-    orm.allUser("users", function(res) {
+    orm.allUser("checkout", function(res) {
       callback(res);
     });
   },

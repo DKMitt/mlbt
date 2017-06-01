@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 	user: "root",
 	password: "password",
 	database: "msebooks"
-
+});
 // Makes connection and outputs to CLI
 connection.connect(function(err) {
 if (err) {
