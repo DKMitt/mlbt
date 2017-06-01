@@ -1,63 +1,51 @@
 <div class="container">
 	
 	<div class="row">
-	    <div class="col-sm-7">
+		<div class="col-sm-7">
 			<br>
-			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
-	    </div>
+			<img src="./images/logo.jpg" alt="Mini Library Book Tracker">
+		</div>
 		<div class="col-sm-5 title">
 			<h1><b>Mini Library Book Tracker</b></h1>
-	        <p><i>by Team Book Slingers</i></p>
-	        <br>
-	        <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
-	    </div>
-  	</div>
-	<hr>
-
-	<div class="row">
-	
-
-	<form action="/edit" method="POST" class="form-horizontal">
-
-
-		<div class="container">
-			<div class="container col-sm-12"><br>
-				<h2>Edit Book</h2>
-				<br>
-				<input class="form-control" name="id" type="hidden" value="{{this.id}}"></div>
-		      	<div class="col-sm-12"><label>Book Title</label>
-		      	<input class="form-control" name="bTitle" type="text" value="{{this.title}}"></div>
-		      	<div class="col-sm-12"><label>Book Author</label>
-		      	<input class="form-control" name="bAuthor" type="text" value="{{this.author}}"></div>
-		      	<div class="col-sm-12"><label>Edition</label>
-		      	<input class="form-control" name="bEdition" type="text" value="{{this.edition}}"></div>
-		      	<div class="col-sm-12"><label>ISBN</label>
-		      	<input class="form-control" name="bISBN" type="text" value="{{this.ISBN}}"></div>
-		      	<div class="col-sm-12"><label>Publisher</label>
-		      	<input class="form-control" name="bpublisher" type="text" value="{{this.publisher}}"></div>
-
-		   
-			</div>
+			<p><i>by Team Book Slingers</i></p>
 			<br>
-
-
-			<div class="form-group1">
-		      <div class="col-md-12 admin-center">
-		    	<br>  	
-				<br>
-
-		        <button class="btn btn-success" type="Submit">Submit</button>
-				
-		      </div>
-		    </div>
+			<p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
 		</div>
-
-	</form>
-	
+	</div>
+	<hr>
+	<div class="row">
+		
+		<form action="/edit" method="POST" class="form-horizontal">
+			<div class="container">
+				<div class="container col-sm-12"><br>
+					<h2>Edit Book</h2>
+					<br>
+					<input class="form-control" name="id" type="hidden" value="{{this.id}}"></div>
+					<div class="col-sm-12"><label>Book Title</label>
+					<input class="form-control" name="bTitle" type="text" value="{{this.title}}"></div>
+					<div class="col-sm-12"><label>Book Author</label>
+					<input class="form-control" name="bAuthor" type="text" value="{{this.author}}"></div>
+					<div class="col-sm-12"><label>Edition</label>
+					<input class="form-control" name="bEdition" type="text" value="{{this.edition}}"></div>
+					<div class="col-sm-12"><label>ISBN</label>
+					<input class="form-control" name="bISBN" type="text" value="{{this.ISBN}}"></div>
+					<div class="col-sm-12"><label>Publisher</label>
+					<input class="form-control" name="bpublisher" type="text" value="{{this.publisher}}"></div>
+					
+				</div>
+				<br>
+				<div class="form-group1">
+					<div class="col-md-12 admin-center">
+						<br>
+						<br>
+						<button class="btn btn-success" type="Submit">Submit</button>
+						
+					</div>
+				</div>
+			</div>
+		</form>
+		
 	</div>
 	
-
 </div>
-
 <BR><BR>
-
