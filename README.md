@@ -1,9 +1,27 @@
+<<<<<<< HEAD
+# Mini Library Book Tracker (MLBT) :blue_book:
+=======
+<<<<<<< HEAD
 # Mini Library Book Tracker (MLBT) :blue_book:
 
 
 ### Description: Full-stack library application that efficiently tracks the books at the Northwestern University department of Material Science and Engineering. Facilitates access for students and faculty.
 
 
+=======
+# Mini Library Book Tracker :blue_book:
+>>>>>>> linh
+
+
+### Description: A full-stack library application that tracks the books at the Northwestern University department of Material Science and Engineering. Facilitates access for students and faculty.
+
+
+### File Structure:
+
+<<<<<<< HEAD
+=======
+>>>>>>> Darryl
+>>>>>>> linh
 ```
 File Structure Diagram
 
@@ -58,17 +76,39 @@ File Structure Diagram
 
 - - -
 
+<<<<<<< HEAD
 ### Technologies Used :package:: 
+=======
+<<<<<<< HEAD
+### Technologies Used :package:: 
+=======
+
+### Technologies Used: 
+>>>>>>> Darryl
+>>>>>>> linh
 <ul>
   <li>MySQL</li>
   <li>Node.js</li>
   <li>Express</li>
   <li>Handlebars</li>
+<<<<<<< HEAD
   <li>ORM</li>  
+=======
+<<<<<<< HEAD
+  <li>ORM</li>  
+=======
+  <li>ORM</li>
+  
+>>>>>>> Darryl
+>>>>>>> linh
 </ul>
 
 - - - 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> linh
 ### How to setup and use the MLBT :computer::
 
 1. Open your command-line user interface (CLI)
@@ -87,4 +127,10 @@ File Structure Diagram
 
 # ![MLBT](public/images/addbook.jpg) Administrator
 
+<<<<<<< HEAD
+=======
+=======
+### How to use the application:
+>>>>>>> Darryl
+>>>>>>> linh
 

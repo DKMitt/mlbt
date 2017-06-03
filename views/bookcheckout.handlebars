@@ -3,111 +3,95 @@
     <div class="row">
         <div class="col-sm-7">
             <br>
-            <img src="./images/logo.jpg" alt="Mini Library Book Tracker">      
+            <img src="./images/logo.jpg" alt="Mini Library Book Tracker">
         </div>
-            <div class="col-sm-5 title">
-                <h1><b>Mini Library Book Tracker</b></h1>
-                <p><i>by Team Book Slingers</i></p>
-                <br>
-                <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
-            </div>
+        <div class="col-sm-5 title">
+            <h1><b>Mini Library Book Tracker</b></h1>
+            <p><i>by Team Book Slingers</i></p>
+            <br>
+            <p class="right"><a href="/admin">Admin</a>  |  <a href="/usercrud">Checkout List</a>  |  <a href="/crud">Add Books<a/>  |  <a href="/checkout">Checkout Book</a></p>
         </div>
-    
-        <hr>
     </div>
+    
+    <hr>
 
     <div class="row">
-    
+        
         <form class="form-horizontal" action="/checkout" method="post" role="form">
             <div class="container">
                 <div class="container col-sm-6"><br>
-                <h2>Checkout Book</h2>
+                    <h2>Checkout Book</h2>
                     <br>
                     <div class="col-sm-12"><label>Name</label><input class="form-control" name="name" type="text" placeholder="Name"></div>
                     <div class="col-sm-12"><label>Email</label><input class="form-control" name="email" type="email" placeholder="Email"></div>
                     <div class="col-sm-12"><label>NetID</label><input class="form-control" name="netID" type="text" placeholder="NetID"></div>
                     <br>
-
                 </div>
                 <br>
 
                 <br>
                 <div class="container col-sm-6">
                     <h2></h2><br><br>
-                    <div class="col-sm-12"><label>Title</label>
-                    <select class="form-control" name="bookTitle" id="books">
-                          {{#each books}}
-                          <option name="title" value="{{this.id}}">{{this.title}}</option>
-                                {{/each}}
+                    <select name="bookID" id="books">
+                        {{#each books}}
+                        <option value="{{this.id}}">- {{this.title}}</option>
+                        {{/each}}
                     </select>
-                    </div>
+                    <br>
                     <div class="col-sm-12"><label>Checkout Date</label><input class="form-control" name="checkout_date" type="date"></div>
-                        <div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
+                    <div class="col-sm-12"><label>Due Date</label><input class="form-control" name="due_date" type="date"></div>
                     <h2></h2>
                     <BR><BR>
                     
                     <br>
                 </div>
-                </div>
-                  <div class="form-group">
-                  <div class="col-md-12 admin-center">
-                    <br>    
-                    <br>
-                    <form action="/{{this.id}}?_method=put" method="post" class="pull-left">
-                    <input type="hidden" name="status" value="false">
-                    <input type="hidden" name="id" value="{{this.id}}">
-                    <button class="btn btn-success" type="Submit">Submit</button>
-                    </form>
+                <div class="form-group">
+                    <div class="col-md-12 admin-center">
+                        <br>
+                        <br>
+                            <button class="btn btn-success" id="form-submit" type="Submit">Submit</button>
+                        </form>
                     </div>
                 </div>
-
-            </div>     
-
+            </div>
         </form>
-        
+
     </div>
-    
 </div>
 
-<BR><BR>
-<BR><BR>
-{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+//  $("#form-submit").on("click", function(event){
+//      event.preventDefault();
+//      var currentURL = window.location.origin;
+//      var data = {
+//          name: $(".name").val().trim(),
+//          email: $(".email").val().trim(),
+//          netid: $(".netID").val().trim(),
+//          checkout: $(".checkout_date").val().trim(),
+//          due: $(".due_date").val().trim(),
+//          books: $("#books:selected").val().trim()
+//      }
+//      console.log(data);
+//      $.ajax({
+//         url: currentURL + '/checkout',
+//         type: 'POST',
+//         success: function(result) {
+//           console.log('THE PUT WAS SUCCESSFUL');
+//         }
+//     });
+//        // $.ajax({
+//        //    url: currentURL + '/checkout/:book',
+//        //    type: 'PUT',
+//        //    success: function(result) {
+//        //        console.log('THE PUT WAS SUCCESSFUL');
+//        //    }
+//     });
+// });
+<BR><BR>
+<BR><BR>
 
-     $("#form-submit").on("click", function(event){
-         event.preventDefault();
-         var currentURL = window.location.origin;
-
-         var data = {
-             name: $(".name").val().trim(),
-             email: $(".email").val().trim(),
-             netid: $(".netID").val().trim(),
-             checkout: $(".checkout_date").val().trim(),
-             due: $(".due_date").val().trim(),
-             books: $("#books:selected").val().trim()
-         }
-
-         console.log(data);
-
-         $.ajax({
-        url: currentURL + '/checkout',
-        type: 'post',
-        success: function(result) {
-            console.log('THE PUT WAS SUCCESSFUL');
-            }
-        });
-
-           $.ajax({
-        url: currentURL + '/checkout/:book',
-        type: 'put',
-        success: function(result) {
-            console.log('THE PUT WAS SUCCESSFUL');
-            }
-        });
-    });
-
-
-
-</script>
- --}}
-
+             // {{!--                     <form action="/{{this.id}}?_method=put" method="post" class="pull-left">
+             //        <input type="hidden" name="status" value="false">
+             //        <input type="hidden" name="id" value="{{this.id}}"> --}}

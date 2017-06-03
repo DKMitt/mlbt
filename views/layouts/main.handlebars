@@ -33,7 +33,25 @@
         {{{ body }}}
         <footer class="footer">
             <p>© Copyright 2017 The Book Slingers</p>
-        </footer>   
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        // Email validation
+        $('form input[name="email"]').blur(function () {
+        
+        var email = $(this).val();
+        var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+        if (re.test(email)) {
+        $('.msg').hide();
+        $('.success').show();
+        } else {
+        $('.msg').hide();
+        $('.error').show();
+        }
+        });
+        </script>
+        <script type="text/javascript" src="/javascript.js"></script>
     </body>
-</html> 
-    
+</html>
+

@@ -1,7 +1,5 @@
 //Importing the ORM to create functions to interact with the database
 var orm = require("../config/orm.js");
-
-
 /* admin have the authority : CRUD command*/
 var admin = {
   //pulling up all the books
@@ -49,39 +47,20 @@ var admin = {
       callback(res);
     });
   },
-  //============USER CHECKING OUT BOOK ===========
+  //============Admin checking out books for users ===========
   allUser: function(callback) {
-    orm.allUser("users", function(res) {
-      callback(res);
-    });
-  },
-  createCheckout: function(val1, val2, val3, val4, val5, callback) {
-    orm.userCheckout("users", "name", "email", "netID", "checkout_date", "due_date", val1, val2, val3, val4, val5, function(res) {
+    orm.allUser("checkout", function(res) {
       callback(res);
     });
   },
 
-  booksTableUpdate: function(netIDVal, bookID, callback) {
-    orm.updateBooksTable("books", "loanerNetID", netIDVal, bookID, function(res) {
-      callback(res);
-    });
-  },
-  //tableInput, loanerNetID, netID, bookID, userBookChoice
-  //=========== Joining user checkout to books=============
-  joiningTables: function(val1, val2, val3, val4, val5, callback) {
-    console.log();
-    orm.joinTables("books.title", "users.name", "users.netID", "users.checkout_date", "users.due_date", "books", "users", "books.id", "users.id", val1, val2, val3, val4, val5, function(res) {
+  createCheckout: function(val1, val2, val3, val4, val5, val6, callback) {
+    orm.userCheckout("checkout", "name", "email", "netID", "book_id", "checkout_date", "due_date", val1, val2, val3, val4, val5, val6, function(res) {
       callback(res);
     });
   }
-
 };
-//SELECT books.title, users.name, users.netID, users.checkout_date, users.due_date FROM books INNER JOIN users ON books.id = users.id;
-
 //Exporting the database function for the controller
+
 module.exports = admin;
-// module.exports = {
-//   admin: admin,
-//   user: user
-// }
 
