@@ -172,7 +172,7 @@ To start the app use the following command
 
 ### Revision History 
 
-Description of revisions made to the app - Working, last updated 9/16/2017
+Description of revisions made to the app - In Process, last updated 9/16/2017
 
   - [x] Wireframe project
   - [x] Researched project
