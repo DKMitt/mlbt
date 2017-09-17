@@ -18,7 +18,6 @@ A full-stack library application that uses javascript (node.js, express.js, hand
   -  Technologies used for this project
   -  Dependencies
   -  How to setup and use this app
-  -  How to use this app
   -  File and directory structure
   -  Revision history
 
@@ -87,21 +86,10 @@ Description of technologies used to develop this app.
 
 4. Type <code>node server.js</code> in CLI to connect to the server
 
-5. For client-side view: Enter <code>localhost:[insert port number]</code> in the URL bar to load index page. For administrator view: add <code>/admin</code> or <code>/crud</code> paths to the local host URL to load administrator-side pages.
+5. For client-side view: Enter <code>http://localhost:3000</code> in the URL bar to view it in the browser. For administrator view: add <code>/admin</code> or <code>/crud</code> paths to the local host URL to load administrator-side pages.
 
 ----
 
-### How to use this app
-
-Description of how to use the app
-
-To start the app use the following command
-
-  "npm start"   - this Runs the app in development mode.
-
-  Open http://localhost:3000 to view it in the browser.
-  
-----
 
 ### File and directory structure
 
